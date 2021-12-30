@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Home from './Screens/Home';
 import NavBar from './layout/NavBar';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline, useMediaQuery } from '@material-ui/core';
-import './App.css';
+import { CssBaseline } from '@material-ui/core';
 import theme from './assets/themes/theme';
 import {
   BrowserRouter as Router,
@@ -13,10 +12,9 @@ import {
 } from 'react-router-dom';
 import { routes } from './core';
 
-
-function App() {
+const App: FC = () => {
   return (
-    <MuiThemeProvider theme={theme}>
+  <MuiThemeProvider theme={theme}>
     <CssBaseline />
     <Router>
       <NavBar />
@@ -28,7 +26,6 @@ function App() {
       </Switch>
     </Router>
   </MuiThemeProvider>
-
   );
 }
 

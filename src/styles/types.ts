@@ -6,6 +6,9 @@ export interface Styles {
   [key: string]: Style;
 }
 
+export type MergeStyleVal = Style | null | undefined | boolean;
+export type MergeStyleVals = MergeStyleVal | MergeStyleVal[];
+
 export interface StyleProps {
   style?: Style;
 }
