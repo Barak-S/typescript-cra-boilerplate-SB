@@ -3,9 +3,9 @@ import { Story, StoryMeta } from 'utils';
 
 import AuthCopyrights, { AuthCopyrightsProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Auth/Copyrights',
   component: AuthCopyrights,
-}))();
+}
 
 export const Basic: Story<Props> = args => <AuthCopyrights {...args} />;
