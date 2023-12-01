@@ -169,7 +169,7 @@ The basic component template:
 
 ```tsx
 import React, { FC } from 'react';
-import { colors, Styles, ms, Style } from '@styles';
+import { colors, Styles, ms, Style } from 'styles';
 
 // Name props of the component as Props
 // Do not export it if you don't need it externaly
@@ -233,7 +233,7 @@ If you will require media queries or more complex styles use `makeStyles()` prov
 ```tsx
 import { makeStyles, Paper, Theme, useTheme } from '@material-ui/core';
 import React, { FC } from 'react';
-import { StyleProps } from '@styles';
+import { StyleProps } from 'styles';
 
 type Props = StyleProps;
 

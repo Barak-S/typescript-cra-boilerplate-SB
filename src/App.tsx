@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
-import Home from './Screens/Home';
-import NavBar from './layout/NavBar';
+import Home from './pages/Home';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-import theme from './assets/themes/theme';
+import { muiTheme } from 'styles/theme';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -14,10 +13,9 @@ import { routes } from './core';
 
 const App: FC = () => {
   return (
-  <MuiThemeProvider theme={theme}>
+  <MuiThemeProvider theme={muiTheme}>
     <CssBaseline />
     <Router>
-      <NavBar />
       <Switch>
         <Route exact path={routes.index}>
           <Home />
