@@ -4,7 +4,7 @@ import { StoryMeta } from 'utils';
 
 import RoundedIconButton, { RoundedIconButtonProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Buttons/RoundedIcon',
   component: RoundedIconButton,
   args: {
@@ -16,7 +16,7 @@ export default ((): StoryMeta<Props> => ({
   parameters: {
     layout: 'centered',
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => <RoundedIconButton {...args} />;
 

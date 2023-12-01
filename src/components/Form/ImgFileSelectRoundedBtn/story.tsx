@@ -3,7 +3,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormImgFileSelectRoundedBtn, { FormImgFileSelectRoundedBtnProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/ImgFileSelectRoundedBtn',
   component: FormImgFileSelectRoundedBtn,
   args: {},
@@ -11,7 +11,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => <FormImgFileSelectRoundedBtn {...args} />;
 

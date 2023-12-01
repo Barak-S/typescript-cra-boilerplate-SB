@@ -4,7 +4,7 @@ import { sbAutoDetectActionProps, sbStyles, Story, StoryMeta } from 'utils';
 
 import ContainedButton, { ContainedButtonProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Buttons/Contained',
   component: ContainedButton,
   args: {
@@ -14,7 +14,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => (
   <View column>

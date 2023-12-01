@@ -5,6 +5,7 @@ const IgnoreNotFoundExportPlugin = require('./IgnoreNotFoundExportPlugin.js');
 module.exports = {
   stories: ['../**/story.tsx'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
+
   webpackFinal: async config => {
     config.resolve = {
       alias: {
@@ -22,4 +23,13 @@ module.exports = {
     config.plugins = [new IgnoreNotFoundExportPlugin(), ...(config.plugins ? config.plugins : [])];
     return config;
   },
+
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
+  }
 };

@@ -4,7 +4,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import LineAwesomeIcon, { LineAwesomeIconProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Icons/LineAwesome',
   component: LineAwesomeIcon,
   args: {
@@ -27,6 +27,6 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     ...sbAutoDetectActionProps,
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => <LineAwesomeIcon {...args} />;

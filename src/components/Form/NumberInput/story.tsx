@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import FormNumberInput, { FormNumberInputProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/NumberInput',
   component: FormNumberInput,
   args: {
@@ -16,7 +16,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const FormNumberInputTemplate: FC<Omit<Props, 'onChange'>> = ({ value: initValue, ...props }) => {
   const [value, setValue] = useState<number>(initValue || 0);

@@ -3,7 +3,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormTooltip, { FormTooltipProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/Tooltip',
   component: FormTooltip,
   args: {
@@ -14,6 +14,6 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => <FormTooltip {...args} />;

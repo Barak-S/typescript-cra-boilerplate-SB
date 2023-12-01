@@ -19,7 +19,7 @@ const defItems: FormChipInputItem[] = [
   },
 ];
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/ChipInput',
   component: FormChipInput,
   args: {
@@ -35,7 +35,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const FormChipInputTemplate: FC<Omit<Props, 'onChange'>> = ({ items: inputItems, ...props }) => {
   const [items, setItems] = useState<FormChipInputItem[]>(inputItems || []);

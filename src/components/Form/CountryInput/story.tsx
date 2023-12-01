@@ -4,7 +4,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormCountryInput, { FormCountryInputProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/CountryInput',
   component: FormCountryInput,
   args: {
@@ -14,7 +14,7 @@ export default ((): StoryMeta<Props> => ({
     actions: { ...sbAutoDetectActionProps },
     layout: 'centered',
   },
-}))();
+}
 
 const FormCountryInputTemplate: FC<Props> = ({ value: initValue, ...props }) => {
   const [value, setValue] = useState<string | undefined>(initValue);

@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import FormColorPicker, { FormColorPickerProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/ColorPicker',
   component: FormColorPicker,
   args: {
@@ -16,7 +16,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const FormColorPickerTemplate: FC<Omit<Props, 'onChange'>> = ({ value: inValue, ...props }) => {
   const [value, setValue] = useState<string>(inValue || '#000');

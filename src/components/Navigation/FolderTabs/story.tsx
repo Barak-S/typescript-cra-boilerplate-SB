@@ -3,10 +3,10 @@ import { Story, StoryMeta } from 'utils';
 
 import FolderTabs, { FolderTabsProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Navigation/FolderTabs',
   component: FolderTabs,
-}))();
+}
 
 export const Basic: Story<Props> = args => (
   <FolderTabs

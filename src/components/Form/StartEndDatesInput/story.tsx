@@ -4,7 +4,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormStartEndDatesInput, { FormStartEndDatesInputProps as Props, FormStartEndDatesInputValue as Value } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/StartEndDatesInput',
   component: FormStartEndDatesInput,
   args: {
@@ -14,7 +14,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const FormStartEndDatesInputTemplate: FC<Omit<Props, 'value' | 'onChange'>> = args => {
   const [value, setValue] = useState<Value | undefined>(undefined);

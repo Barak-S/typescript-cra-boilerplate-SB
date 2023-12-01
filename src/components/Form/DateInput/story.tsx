@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import FormDateInput, { FormDateInputProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/DateInput',
   component: FormDateInput,
   args: {},
@@ -13,7 +13,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const FormDateInputTemplate: FC<Omit<Props, 'onChange'>> = ({ value: initValue, ...props }) => {
   const [value, setValue] = useState<Date | undefined>(initValue);

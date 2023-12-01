@@ -3,7 +3,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import LineTabs, { LineTabsProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Navigation/LineTabs',
   component: LineTabs,
   args: {
@@ -18,7 +18,7 @@ export default ((): StoryMeta<Props> => ({
     actions: { ...sbAutoDetectActionProps },
     layout: 'centered',
   },
-}))();
+}
 
 const LineTabsTemplate: FC<Omit<Props, 'tab' | 'onChange'>> = props => {
   const [tab, setTab] = useState<number>(0);

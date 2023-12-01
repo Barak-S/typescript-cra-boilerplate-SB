@@ -6,7 +6,7 @@ import { StoryMeta } from 'utils';
 
 import SocialButton, { SocialButtonProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Buttons/Social',
   component: SocialButton,
   argTypes: {
@@ -18,7 +18,7 @@ export default ((): StoryMeta<Props> => ({
   parameters: {
     layout: 'centered',
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => (
   <View column style={{ width: 200 }}>

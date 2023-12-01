@@ -3,7 +3,7 @@ import { getCurTimeZoneCode, sbAutoDetectActionProps, Story, StoryMeta } from 'u
 
 import FormTimeZoneInput, { FormTimeZoneInputProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/TimeZoneInput',
   component: FormTimeZoneInput,
   args: {
@@ -14,7 +14,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const FormTimeZoneInputTemplate: FC<Omit<Props, 'onChange'>> = ({ value: initValue, ...props }) => {
   const [value, setValue] = useState<string>(initValue || '');

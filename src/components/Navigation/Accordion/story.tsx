@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Accordion, { AccordionProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Navigation/Accordion',
   component: Accordion,
   args: {
@@ -19,7 +19,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const AccordionTemplate: FC<Omit<Props, 'onChange'>> = ({ expanded: inputValue, ...props }) => {
   const [value, setValue] = useState<boolean>(inputValue);

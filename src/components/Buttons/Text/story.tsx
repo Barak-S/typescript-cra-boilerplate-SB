@@ -4,7 +4,7 @@ import { sbAutoDetectActionProps, sbStyles, Story, StoryMeta } from 'utils';
 
 import TextButton, { TextButtonProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Buttons/Text',
   component: TextButton,
   args: {
@@ -15,7 +15,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => (
   <View column>

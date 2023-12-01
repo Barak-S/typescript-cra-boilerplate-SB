@@ -4,7 +4,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormTextArea, { FormTextAreaProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/TextArea',
   component: FormTextArea,
   args: {
@@ -16,7 +16,7 @@ export default ((): StoryMeta<Props> => ({
     actions: { ...sbAutoDetectActionProps },
     layout: 'centered',
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => {
   const [value, setValue] = useState<string>(String(args.defaultValue));

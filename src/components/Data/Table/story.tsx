@@ -3,7 +3,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import DataTable, { DataTableProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Data/Table',
   component: DataTable,
   args: {
@@ -37,6 +37,6 @@ export default ((): StoryMeta<Props> => ({
   parameters: {
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => <DataTable {...args} />;

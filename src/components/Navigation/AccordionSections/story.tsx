@@ -3,7 +3,7 @@ import { Story, StoryMeta } from 'utils';
 
 import AccordionSections, { AccordionSectionsProps as Props } from './index';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Navigation/AccordionSections',
   component: AccordionSections,
   args: {
@@ -12,6 +12,6 @@ export default ((): StoryMeta<Props> => ({
       { id: 1, title: 'Second section', content: 'Second section' },
     ],
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => <AccordionSections {...args} />;

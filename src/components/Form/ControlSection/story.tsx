@@ -4,7 +4,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 import FormControlSection, { FormControlSectionProps as Props } from '.';
 import FormTextInput from '../TextInput';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/ControlSection',
   component: FormControlSection,
   args: {
@@ -18,6 +18,6 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => <FormControlSection {...args} />;

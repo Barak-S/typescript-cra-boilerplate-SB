@@ -5,7 +5,7 @@ import { StoryMeta, Story } from 'utils';
 
 import FormTextInput, { FormTextInputProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/TextInput',
   component: FormTextInput,
   args: {
@@ -14,7 +14,7 @@ export default ((): StoryMeta<Props> => ({
   parameters: {
     layout: 'centered',
   },
-}))();
+}
 
 const FormTextInputTemplate: FC<Omit<Props, 'value' | 'onChange'>> = args => {
   const [value, setValue] = useState<string>('Value');

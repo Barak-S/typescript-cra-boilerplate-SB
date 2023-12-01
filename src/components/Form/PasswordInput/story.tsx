@@ -6,7 +6,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormPasswordInput, { FormPasswordInputProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/PasswordInput',
   component: FormPasswordInput,
   args: {
@@ -16,7 +16,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const FormPasswordInputTemplate: FC<Omit<Props, 'value' | 'onChange' | 'onChangeVisibleClick' | 'visible'>> = props => {
   const [value, setValue] = useState<string>('12345678');

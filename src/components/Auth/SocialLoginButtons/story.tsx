@@ -4,13 +4,13 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import AuthSocialLoginButtons, { AuthSocialLoginButtonsProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Auth/SocialLoginButtons',
   component: AuthSocialLoginButtons,
   parameters: {
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => {
   return (

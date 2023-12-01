@@ -3,7 +3,7 @@ import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormControlInfo, { FormControlInfoProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/ControlInfo',
   component: FormControlInfo,
   args: {
@@ -16,6 +16,6 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => <FormControlInfo {...args} />;

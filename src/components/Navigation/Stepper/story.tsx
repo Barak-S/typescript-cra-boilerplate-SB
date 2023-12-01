@@ -3,7 +3,7 @@ import { sbChromaticDefViewports, sbStyles, Story, StoryMeta } from 'utils';
 
 import Stepper, { StepperProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Navigation/Stepper',
   component: Stepper,
   args: {
@@ -12,7 +12,7 @@ export default ((): StoryMeta<Props> => ({
   parameters: {
     chromatic: { ...sbChromaticDefViewports },
   },
-}))();
+}
 
 export const Basic: Story<Props> = args => (
   <>

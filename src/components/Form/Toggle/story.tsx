@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 
 import FormToggle, { FormToggleProps as Props } from '.';
 
-export default ((): StoryMeta<Props> => ({
+export default {
   title: 'components/Form/Toggle',
   component: FormToggle,
   args: {
@@ -14,7 +14,7 @@ export default ((): StoryMeta<Props> => ({
     layout: 'centered',
     actions: { ...sbAutoDetectActionProps },
   },
-}))();
+}
 
 const FormToggleTemplate: FC<Omit<Props, 'value' | 'onChange'>> = args => {
   const [value, setValue] = useState<boolean>(false);
