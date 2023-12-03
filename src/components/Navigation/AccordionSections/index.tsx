@@ -124,7 +124,7 @@ const useStyles = makeStyles({
       color: colors.textGray,
       alignItems: 'center',
       transform: 'rotate(-90deg)',
-      transition: '0.3s ease',
+      transition: '0.2s ease',
       display: 'flex',
       margin: '0px 0px',
     },
@@ -133,7 +133,7 @@ const useStyles = makeStyles({
       alignItems: 'center',
       display: 'flex',
       '& .MuiIcon-root': {
-        color: colors.textGray,
+        color: colors.primary,
         transform: 'rotate(180deg)',
         '&:hover': {
           transform: 'rotate(180deg)',

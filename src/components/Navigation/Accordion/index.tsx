@@ -1,9 +1,10 @@
-import { Accordion as MuiAccordion, AccordionDetails, AccordionSummary, Divider } from '@material-ui/core';
-import { Title } from 'components/Common';
-import React, { ChangeEvent, FC } from 'react';
-import { colors, ms, StyleProps, Styles, useHover } from 'styles';
-
-// import NavigationAccordionIcon from './components/Icon';
+import React, { FC, useState, useEffect, ChangeEvent } from 'react'
+import { Title } from 'components/Common'
+import Accordion from '@material-ui/core/Accordion'
+import AccordionDetails from '@material-ui/core/AccordionDetails'
+import AccordionSummary from '@material-ui/core/AccordionSummary'
+import NavigationAccordionIcon from './components/Icon'
+import { colors, ms, StyleProps, Styles, useHover } from 'styles'
 
 interface Props extends StyleProps {
   id: string;
@@ -12,35 +13,40 @@ interface Props extends StyleProps {
   onChange?: (newExpanded: boolean) => void;
 }
 
-export const Accordion: FC<Props> = ({ style, id, title, expanded, onChange, children }) => {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  const handleChange = (_event: ChangeEvent<{}>, expanded: boolean) => {
-    if (onChange) {
-      onChange(expanded);
-    }
-  };
+const ControlledAccordion: FC<Props> = ({ id, expanded, title, onChange, children, style }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    setIsOpen(isOpen)
+  }, [expanded])
+
+  const handleChange = (event: ChangeEvent<{}>, isExpanded: boolean) => {
+    setIsOpen(isExpanded)
+    onChange && onChange(isExpanded)
+  }
 
   const { hover, hoverProps } = useHover();
-  const styles = getStyles(expanded);
+  const styles = getStyles(isOpen);
 
   return (
-    <MuiAccordion style={ms(styles.container, style)} expanded={expanded} onChange={handleChange}>
-      {expanded && <Divider />}
+    <Accordion style={ms(styles.container, style)} expanded={isOpen} onChange={(e) => handleChange(e, !isOpen)}>
       <AccordionSummary
         id={`${id}-header`}
         aria-controls={`${id}-content`}
-        style={expanded ? styles.expandedHeader : styles.header}
-        // expandIcon={<NavigationAccordionIcon hovered={hover} expanded={expanded} />}
+        style={isOpen ? styles.expandedHeader : styles.header}
+        expandIcon={<NavigationAccordionIcon hovered={hover} expanded={isOpen} />}
         {...hoverProps}
       >
         <Title type="h4" style={styles.title}>
           {title}
         </Title>
       </AccordionSummary>
-      <AccordionDetails style={styles.details}>{children}</AccordionDetails>
-    </MuiAccordion>
-  );
-};
+      <AccordionDetails style={styles.details}>
+        {children}
+      </AccordionDetails>
+    </Accordion>
+  )
+}
 
 const getStyles = (expanded: boolean): Styles => ({
   container: {
@@ -59,7 +65,7 @@ const getStyles = (expanded: boolean): Styles => ({
     display: 'flex',
     justifyContent: 'space-between',
     minHeight: 76,
-    color: colors.steal,
+    color: colors.primary,
   },
   title: {
     fontSize: 18,
@@ -69,7 +75,7 @@ const getStyles = (expanded: boolean): Styles => ({
     display: 'flex',
     flexDirection: 'column',
   },
-});
+})
 
-export type AccordionProps = Props;
-export default Accordion;
+export type AccordionProps = Props
+export default ControlledAccordion

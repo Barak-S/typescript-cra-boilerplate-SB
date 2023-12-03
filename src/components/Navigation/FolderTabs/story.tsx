@@ -12,13 +12,13 @@ export const Basic: Story<Props> = args => {
   const [activeTab, setActiveTab] = useState<number>(1)
   return (
     <FolderTabs
+      {...args}
       onChange={(num) => setActiveTab(num)}
       currentTab={activeTab}
       values={[
         { id: 0, name: 'First', content: 'Some First Content' },
         { id: 1, name: 'Second', content: 'Some Second Content' },
       ]}
-      {...args}
     />
   );
 }

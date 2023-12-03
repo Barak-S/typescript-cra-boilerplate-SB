@@ -121,7 +121,7 @@ export const muiTheme = createTheme({
       },
       root: {
         '&.Mui-focused:not(.Mui-error)': {
-          color: colors.steal,
+          color: colors.primary,
         },
         '&.Mui-focused:not(.Mui-error) + .MuiInputBase-root > .MuiInputBase-input': {
           border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
@@ -154,7 +154,7 @@ export const muiTheme = createTheme({
         },
       },
       filled: {
-        color: colors.steal,
+        color: colors.primary,
         '& + .MuiInputBase-root > .MuiInputBase-input': {
           background: colors.white,
           border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
@@ -231,15 +231,15 @@ export const muiTheme = createTheme({
       root: {
         '&$selected': {
           color: colors.white,
-          backgroundColor: colors.steal,
+          backgroundColor: colors.primary,
           '&:hover': {
             color: colors.white,
-            backgroundColor: colors.steal,
+            backgroundColor: colors.primary,
           },
         },
         '&:hover': {
           color: colors.white,
-          backgroundColor: colors.steal,
+          backgroundColor: colors.primary,
         },
       },
     },

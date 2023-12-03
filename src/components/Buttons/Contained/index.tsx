@@ -34,17 +34,17 @@ export const ContainedButton: FC<Props> = ({
   onClick,
 }) => {
   const mainColor = select(color, {
-    default: colors.primaryGradient,
-    inherit: colors.primaryGradient,
-    primary: colors.primaryGradient,
+    default: colors.primary,
+    inherit: colors.primary,
+    primary: colors.primary,
     secondary: colors.secondary,
     red: colors.alert,
   });
   const hoverColor = !disabled
     ? select(color, {
-        default: colors.withAlpha(colors.primaryGradient, 0.7),
-        inherit: colors.withAlpha(colors.primaryGradient, 0.7),
-        primary: colors.withAlpha(colors.primaryGradient, 0.7),
+        default: colors.withAlpha(colors.primary, 0.7),
+        inherit: colors.withAlpha(colors.primary, 0.7),
+        primary: colors.withAlpha(colors.primary, 0.7),
         secondary: colors.withAlpha(colors.secondary, 0.7),
         red: colors.withAlpha(colors.alert, 0.7),
       })
