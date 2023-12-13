@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { Story } from 'utils';
 
 import FormSelect, { FormSelectProps } from '.';
 
@@ -29,4 +28,4 @@ const FormSelectTemplate: FC<Omit<FormSelectProps<Item>, 'value' | 'onChange'>> 
   return <FormSelect<Item> {...props} value={value} onChange={setValue} />;
 };
 
-export const Basic: Story<FormSelectProps<Item>> = args => <FormSelectTemplate {...args} />;
+export const Basic = (args: any) => <FormSelectTemplate {...args} />;

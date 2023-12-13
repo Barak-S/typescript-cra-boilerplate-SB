@@ -1,6 +1,5 @@
 import React, { FC, useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormCountryInput, { FormCountryInputProps as Props } from '.';
 
@@ -11,7 +10,6 @@ export default {
     style: { width: 300 },
   },
   parameters: {
-    actions: { ...sbAutoDetectActionProps },
     layout: 'centered',
   },
 }
@@ -25,9 +23,9 @@ const FormCountryInputTemplate: FC<Props> = ({ value: initValue, ...props }) => 
   return <FormCountryInput {...props} value={value} onChange={handleChange} />;
 };
 
-export const Basic: Story<Props> = args => <FormCountryInputTemplate {...args} />;
+export const Basic = (args: any) => <FormCountryInputTemplate {...args} />;
 
-export const Prefilled: Story<Props> = args => <FormCountryInputTemplate {...args} />;
+export const Prefilled = (args: any) => <FormCountryInputTemplate {...args} />;
 
 Prefilled.args = {
   value: 'Unites States',

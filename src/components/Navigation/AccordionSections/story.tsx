@@ -1,5 +1,4 @@
 import React from 'react';
-import { Story, StoryMeta } from 'utils';
 
 import AccordionSections, { AccordionSectionsProps as Props } from './index';
 
@@ -14,4 +13,4 @@ export default {
   },
 }
 
-export const Basic: Story<Props> = args => <AccordionSections {...args} />;
+export const Basic = (args: any) => <AccordionSections {...args} />;

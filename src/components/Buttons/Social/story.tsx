@@ -2,7 +2,6 @@ import { Story } from '@storybook/react';
 import { View } from 'components/Common';
 import React from 'react';
 import { Styles } from 'styles';
-import { StoryMeta } from 'utils';
 
 import SocialButton, { SocialButtonProps as Props } from '.';
 
@@ -20,7 +19,7 @@ export default {
   },
 }
 
-export const Basic: Story<Props> = args => (
+export const Basic = (args: any) => (
   <View column style={{ width: 200 }}>
     <SocialButton {...args} type="facebook" />
     <SocialButton {...args} style={styles.indent} type="google" />
@@ -28,7 +27,7 @@ export const Basic: Story<Props> = args => (
   </View>
 );
 
-export const Disabled: Story<Props> = args => (
+export const Disabled = (args: any) => (
   <View column style={{ width: 200 }}>
     <SocialButton {...args} disabled type="facebook" />
     <SocialButton {...args} style={styles.indent} disabled type="google" />

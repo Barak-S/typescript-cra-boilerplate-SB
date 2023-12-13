@@ -1,5 +1,4 @@
 import React from 'react';
-import { StoryMeta, Story } from 'utils';
 
 import AuthSectionSplitter, { AuthSectionSplitterProps as Props } from '.';
 
@@ -8,4 +7,4 @@ export default {
   component: AuthSectionSplitter,
 }
 
-export const Basic: Story<Props> = args => <AuthSectionSplitter {...args}>{'Text'}</AuthSectionSplitter>;
+export const Basic = (args: any) => <AuthSectionSplitter {...args}>{'Text'}</AuthSectionSplitter>;

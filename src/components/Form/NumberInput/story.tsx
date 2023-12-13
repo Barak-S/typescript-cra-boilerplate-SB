@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 import { action } from '@storybook/addon-actions';
 
 import FormNumberInput, { FormNumberInputProps as Props } from '.';
@@ -14,7 +13,6 @@ export default {
   argTypes: {},
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
@@ -29,4 +27,4 @@ const FormNumberInputTemplate: FC<Omit<Props, 'onChange'>> = ({ value: initValue
   return <FormNumberInput {...props} value={value} onChange={handleChange} />;
 };
 
-export const Basic: Story<Props> = args => <FormNumberInputTemplate {...args} />;
+export const Basic = (args: any) => <FormNumberInputTemplate {...args} />;

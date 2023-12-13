@@ -1,6 +1,5 @@
 import { View } from 'components/Common';
 import React, { useState } from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormTextArea, { FormTextAreaProps as Props } from '.';
 
@@ -13,12 +12,11 @@ export default {
     label: 'Type your message',
   },
   parameters: {
-    actions: { ...sbAutoDetectActionProps },
     layout: 'centered',
   },
 }
 
-export const Basic: Story<Props> = args => {
+export const Basic = (args: any) => {
   const [value, setValue] = useState<string>(String(args.defaultValue));
 
   return (

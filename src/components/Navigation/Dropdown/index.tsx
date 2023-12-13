@@ -80,7 +80,7 @@ const useStyles = makeStyles({
     },
   },
   anchor: {
-    color: colors.steal,
+    color: colors.primary,
   },
 });
 

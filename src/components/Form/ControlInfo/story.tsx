@@ -1,5 +1,4 @@
 import React from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormControlInfo, { FormControlInfoProps as Props } from '.';
 
@@ -14,8 +13,7 @@ export default {
   argTypes: {},
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
-export const Basic: Story<Props> = args => <FormControlInfo {...args} />;
+export const Basic = (args: any) => <FormControlInfo {...args} />;

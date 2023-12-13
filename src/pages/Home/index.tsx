@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { StyleProps } from 'styles';
 import { Typography } from '@material-ui/core';
+import { ContainedButton } from 'components/Buttons/Contained';
+import { FormInput, FormPasswordInput, FormTextArea } from 'components/Form';
 
 type Props = StyleProps;
 
@@ -11,6 +13,12 @@ const Home: FC<Props> = ({ style }) => {
     return (
         <div className={classes.container} style={style}>
             <Typography>Home</Typography>
+            <FormInput />
+            <FormPasswordInput fullWidth={false} visible={true} />
+            <FormTextArea/>
+            <ContainedButton startIcon="plus-circle" size="small">laisfhasf</ContainedButton>
+            <ContainedButton startIcon="plus-circle" size="medium">laisfhasf</ContainedButton>
+            <ContainedButton startIcon="plus-circle" size="large">laisfhasf</ContainedButton>
         </div>
     );
 };
@@ -18,8 +26,8 @@ const Home: FC<Props> = ({ style }) => {
 const useStyles = makeStyles(theme => ({
     container: {
         display: 'flex',
-        justifyContent: 'space-between',
-        width: 192,
+        width: '100%',
+        minHeight: '100vh',
     },
 }))
 

@@ -11,13 +11,13 @@ export const muiTheme = createTheme({
       main: colors.primary,
     },
     secondary: {
-      main: colors.primary,
+      main: colors.secondary,
     },
     error: {
       main: red.A400,
     },
     background: {
-      default: colors.background,
+      default: colors.white,
     },
   },
   typography: {
@@ -59,10 +59,7 @@ export const muiTheme = createTheme({
     },
     MuiInputBase: {
       root: {
-        height: '100%',
-        borderRadius: 12,
-        borderTopLeftRadius: 12,
-        borderTopRightRadius: 12,
+        height: 'fit-content',
         '&.Mui-focused > .MuiInputBase-input': {
           background: colors.white,
           border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,

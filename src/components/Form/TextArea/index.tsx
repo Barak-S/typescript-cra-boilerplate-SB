@@ -143,7 +143,7 @@ const styles: Styles = {
   focusedLabel: {
     transform: 'translate(0, -20px) scale(.75)',
     transformOrigin: 'top left',
-    color: colors.steal,
+    color: colors.primary,
   },
   error: {
     color: colors.error,

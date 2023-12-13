@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 import { action } from '@storybook/addon-actions';
 
 import FormToggle, { FormToggleProps as Props } from '.';
@@ -12,11 +11,10 @@ export default {
   },
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
-const FormToggleTemplate: FC<Omit<Props, 'value' | 'onChange'>> = args => {
+const FormToggleTemplate: FC<Omit<Props, 'value' | 'onChange'>> = (args: any) => {
   const [value, setValue] = useState<boolean>(false);
 
   const handleChange = (val: boolean) => {
@@ -27,4 +25,4 @@ const FormToggleTemplate: FC<Omit<Props, 'value' | 'onChange'>> = args => {
   return <FormToggle {...args} value={value} onChange={handleChange} />;
 };
 
-export const Basic: Story<Props> = args => <FormToggleTemplate {...args} />;
+export const Basic = (args: any) => <FormToggleTemplate {...args} />;

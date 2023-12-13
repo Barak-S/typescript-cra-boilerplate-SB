@@ -1,6 +1,5 @@
 import React from 'react';
 import { colors } from 'styles';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import LineAwesomeIcon, { LineAwesomeIconProps as Props } from '.';
 
@@ -13,7 +12,7 @@ export default {
   argTypes: {
     color: {
       control: 'color',
-      defaultValue: colors.back,
+      defaultValue: colors.primary,
     },
     size: {
       control: 'range',
@@ -25,8 +24,7 @@ export default {
   },
   parameters: {
     layout: 'centered',
-    ...sbAutoDetectActionProps,
   },
 }
 
-export const Basic: Story<Props> = args => <LineAwesomeIcon {...args} />;
+export const Basic = (args: any) => <LineAwesomeIcon {...args} />;

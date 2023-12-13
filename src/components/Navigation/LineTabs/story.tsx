@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import LineTabs, { LineTabsProps as Props } from '.';
 
@@ -15,7 +14,6 @@ export default {
   },
   argTypes: {},
   parameters: {
-    actions: { ...sbAutoDetectActionProps },
     layout: 'centered',
   },
 }
@@ -25,4 +23,4 @@ const LineTabsTemplate: FC<Omit<Props, 'tab' | 'onChange'>> = props => {
   return <LineTabs {...props} tab={tab} onChange={(_e, val) => setTab(val)} />;
 };
 
-export const Basic: Story<Props> = args => <LineTabsTemplate {...args} />;
+export const Basic = (args: any) => <LineTabsTemplate {...args} />;

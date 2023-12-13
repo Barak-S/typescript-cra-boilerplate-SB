@@ -1,5 +1,4 @@
 import React, { FC, useState, useEffect } from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 import { action } from '@storybook/addon-actions';
 
 import FormColorPicker, { FormColorPickerProps as Props } from '.';
@@ -14,7 +13,6 @@ export default {
   argTypes: {},
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
@@ -30,4 +28,4 @@ const FormColorPickerTemplate: FC<Omit<Props, 'onChange'>> = ({ value: inValue, 
   return <FormColorPicker {...props} value={value} onChange={handleChange} />;
 };
 
-export const Basic: Story<Props> = args => <FormColorPickerTemplate {...args} />;
+export const Basic = (args: any) => <FormColorPickerTemplate {...args} />;

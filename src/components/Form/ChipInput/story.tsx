@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions';
 import React, { FC, useState } from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormChipInput, { FormChipInputItem, FormChipInputProps as Props } from '.';
 
@@ -33,7 +32,6 @@ export default {
   },
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
@@ -46,4 +44,4 @@ const FormChipInputTemplate: FC<Omit<Props, 'onChange'>> = ({ items: inputItems,
   return <FormChipInput {...props} items={items} onChange={handleChange} />;
 };
 
-export const Basic: Story<Props> = args => <FormChipInputTemplate {...args} />;
+export const Basic = (args: any) => <FormChipInputTemplate {...args} />;

@@ -1,6 +1,4 @@
-import { Story } from '@storybook/react';
 import React from 'react';
-import { StoryMeta } from 'utils';
 
 import RoundedIconButton, { RoundedIconButtonProps as Props } from '.';
 
@@ -18,9 +16,9 @@ export default {
   },
 }
 
-export const Basic: Story<Props> = args => <RoundedIconButton {...args} />;
+export const Basic = (args: any) => <RoundedIconButton {...args} />;
 
-export const Disabled: Story<Props> = args => <RoundedIconButton {...args} disabled />;
+export const Disabled = (args: any) => <RoundedIconButton {...args} disabled />;
 
 Disabled.parameters = {
   docs: {

@@ -58,13 +58,13 @@ export const ContainedButton: FC<Props> = ({
   const { hover, hoverProps } = useHover();
   return (
     <Button
+      style={ms(styles.container, hover && styles.hover, style)}
       className={mc(
         size === 'small' && classes.containerSmall,
         size === 'medium' && classes.containerMedium,
         size === 'large' && classes.containerLarge,
         className,
       )}
-      style={ms(styles.container, hover && styles.hover, style)}
       variant="contained"
       color={color !== 'red' ? color : undefined}
       disabled={disabled}
@@ -89,7 +89,6 @@ const getStyles = (
   processing: boolean | undefined,
 ): Styles => ({
   container: {
-    width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -97,6 +96,7 @@ const getStyles = (
     borderRadius: 12,
     background: disabled ? colors.tint4 : processing ? colors.withAlpha((mainColor || ''), 0.7) : mainColor,
     color: fontColor,
+    width: 'fit-content',
   },
   hover: {
     transition: 'none',
@@ -106,7 +106,7 @@ const getStyles = (
 
 const useStyles = makeStyles({
   containerLarge: {
-    minHeight: 52,
+    height: 44,
     fontSize: 15,
     lineHeight: 1.4,
     '& .MuiIcon-root': {
@@ -114,7 +114,7 @@ const useStyles = makeStyles({
     },
   },
   containerMedium: {
-    height: 34,
+    height: 38,
     fontSize: 13,
     '& .MuiButton-label': {
       display: 'flex',
@@ -126,7 +126,7 @@ const useStyles = makeStyles({
     },
   },
   containerSmall: {
-    height: 34,
+    height: 32,
     fontSize: 11,
     fontWeight: 400,
     '& .MuiButton-label': {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormCheckboxInput, { FormCheckboxInputProps as Props } from '.';
 
@@ -11,12 +10,11 @@ export default {
   },
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
-export const Basic: Story<Props> = args => <FormCheckboxInput {...args} />;
+export const Basic = (args: any) => <FormCheckboxInput {...args} />;
 
-export const DefaultChecked: Story<Props> = args => <FormCheckboxInput {...args} defaultChecked />;
+export const DefaultChecked = (args: any) => <FormCheckboxInput {...args} defaultChecked />;
 
-export const Disabled: Story<Props> = args => <FormCheckboxInput {...args} disabled />;
+export const Disabled = (args: any) => <FormCheckboxInput {...args} disabled />;

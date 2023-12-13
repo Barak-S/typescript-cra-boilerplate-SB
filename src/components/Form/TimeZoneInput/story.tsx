@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { getCurTimeZoneCode, sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
+import { getCurTimeZoneCode } from 'utils';
 
 import FormTimeZoneInput, { FormTimeZoneInputProps as Props } from '.';
 
@@ -12,7 +12,6 @@ export default {
   },
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
@@ -21,4 +20,4 @@ const FormTimeZoneInputTemplate: FC<Omit<Props, 'onChange'>> = ({ value: initVal
   return <FormTimeZoneInput {...props} value={value} onChange={v => setValue(v)} />;
 };
 
-export const Basic: Story<Props> = args => <FormTimeZoneInputTemplate {...args} />;
+export const Basic = (args: any) => <FormTimeZoneInputTemplate {...args} />;

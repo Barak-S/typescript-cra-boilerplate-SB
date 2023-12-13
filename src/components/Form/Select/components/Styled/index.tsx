@@ -155,7 +155,7 @@ export const useStyles = (iconStart: boolean) =>
     },
     selectedItem: {
       color: colors.white,
-      backgroundColor: colors.steal,
+      backgroundColor: colors.primary,
     },
     selectMenu: {
       padding: '8px 0',

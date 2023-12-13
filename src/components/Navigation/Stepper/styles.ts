@@ -9,12 +9,12 @@ export const StepperConnector = withStyles({
   },
   active: {
     '& $line': {
-      background: colors.steal,
+      background: colors.primary,
     },
   },
   completed: {
     '& $line': {
-      background: colors.steal,
+      background: colors.primary,
     },
   },
   line: {

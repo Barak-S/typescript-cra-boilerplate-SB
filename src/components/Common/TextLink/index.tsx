@@ -33,7 +33,7 @@ export const TextLink: FC<Props> = ({ testID, style, href = '#', target, classNa
 
 const styles: Styles = {
   container: {
-    color: colors.steal,
+    color: colors.primary,
     textDecoration: 'none',
   },
 };

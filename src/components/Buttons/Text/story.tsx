@@ -1,6 +1,5 @@
 import { View } from 'components/Common';
 import React from 'react';
-import { sbAutoDetectActionProps, sbStyles, Story, StoryMeta } from 'utils';
 
 import TextButton, { TextButtonProps as Props } from '.';
 
@@ -13,13 +12,12 @@ export default {
   argTypes: {},
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
-export const Basic: Story<Props> = args => (
+export const Basic = (args: any) => (
   <View column>
-    <TextButton {...args} style={sbStyles.mb10} />
+    <TextButton {...args} />
     <TextButton {...args} disabled />
   </View>
 );

@@ -1,5 +1,4 @@
 import React from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormControlSection, { FormControlSectionProps as Props } from '.';
 import FormTextInput from '../TextInput';
@@ -16,8 +15,7 @@ export default {
   argTypes: {},
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
-export const Basic: Story<Props> = args => <FormControlSection {...args} />;
+export const Basic = (args: any) => <FormControlSection {...args} />;

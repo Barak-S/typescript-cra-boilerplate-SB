@@ -1,6 +1,4 @@
 import React from 'react';
-import { StoryMeta, Story } from 'utils';
-
 import Image, { ImageProps as Props } from '.';
 
 export default {
@@ -11,6 +9,6 @@ export default {
   },
 }
 
-export const Basic: Story<Props> = args => (
+export const Basic = (args: any) => (
   <Image {...args} style={{ width: 300, height: 200 }} source="https://picsum.photos/id/237/300/200" />
 );

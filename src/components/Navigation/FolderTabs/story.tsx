@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Story, StoryMeta } from 'utils';
 
 import FolderTabs, { FolderTabsProps as Props } from '.';
 
@@ -8,7 +7,7 @@ export default {
   component: FolderTabs,
 }
 
-export const Basic: Story<Props> = args => {
+export const Basic = (args: any) => {
   const [activeTab, setActiveTab] = useState<number>(1)
   return (
     <FolderTabs

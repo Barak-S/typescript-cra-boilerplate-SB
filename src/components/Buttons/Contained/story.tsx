@@ -1,6 +1,5 @@
 import { View } from 'components/Common';
 import React from 'react';
-import { sbAutoDetectActionProps, sbStyles, Story, StoryMeta } from 'utils';
 
 import ContainedButton, { ContainedButtonProps as Props } from '.';
 
@@ -12,30 +11,29 @@ export default {
   },
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
-export const Basic: Story<Props> = args => (
+export const Basic = (args: any) => (
   <View column>
-    <ContainedButton {...args} style={sbStyles.mb30}>
+    <ContainedButton {...args}>
       {'Log In'}
     </ContainedButton>
-    <ContainedButton {...args} style={sbStyles.mb10} size="medium" disabled />
-    <ContainedButton {...args} style={sbStyles.mb10} size="medium" processing />
-    <ContainedButton {...args} style={sbStyles.mb10} size="medium" endIcon="plus-circle" />
-    <ContainedButton {...args} style={sbStyles.mb10} size="medium" startIcon="plus-circle" />
-    <ContainedButton {...args} style={sbStyles.mb30} size="medium" color="red" />
-    <ContainedButton {...args} style={sbStyles.mb10} size="large" disabled />
-    <ContainedButton {...args} style={sbStyles.mb10} size="large" processing />
-    <ContainedButton {...args} style={sbStyles.mb10} size="large" endIcon="plus-circle" />
-    <ContainedButton {...args} style={sbStyles.mb10} size="large" startIcon="plus-circle" />
+    <ContainedButton {...args} size="medium" disabled />
+    <ContainedButton {...args} size="medium" processing />
+    <ContainedButton {...args} size="medium" endIcon="plus-circle" />
+    <ContainedButton {...args} size="medium" startIcon="plus-circle" />
+    <ContainedButton {...args} size="medium" color="red" />
+    <ContainedButton {...args} size="large" disabled />
+    <ContainedButton {...args} size="large" processing />
+    <ContainedButton {...args} size="large" endIcon="plus-circle" />
+    <ContainedButton {...args} size="large" startIcon="plus-circle" />
     <ContainedButton {...args} size="large" color="red" />
   </View>
 );
 
-export const Disabled: Story<Props> = args => <ContainedButton {...args} disabled />;
+export const Disabled = (args: any) => <ContainedButton {...args} disabled />;
 
-export const Processing: Story<Props> = args => <ContainedButton {...args} processing />;
+export const Processing = (args: any) => <ContainedButton {...args} processing />;
 
-export const PlusType: Story<Props> = args => <ContainedButton {...args} endIcon="plus-circle" />;
+export const PlusType = (args: any) => <ContainedButton {...args} endIcon="plus-circle" />;

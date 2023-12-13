@@ -71,7 +71,7 @@ const base = {
 
 const named = {
   background: '#F7F7F7',
-  secondary: '#f2f4f7',
+  secondary: '#2271E9',
 };
 
 

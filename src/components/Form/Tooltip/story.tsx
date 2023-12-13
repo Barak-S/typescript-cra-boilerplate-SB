@@ -1,5 +1,4 @@
 import React from 'react';
-import { sbAutoDetectActionProps, Story, StoryMeta } from 'utils';
 
 import FormTooltip, { FormTooltipProps as Props } from '.';
 
@@ -12,8 +11,7 @@ export default {
   argTypes: {},
   parameters: {
     layout: 'centered',
-    actions: { ...sbAutoDetectActionProps },
   },
 }
 
-export const Basic: Story<Props> = args => <FormTooltip {...args} />;
+export const Basic = (args: any) => <FormTooltip {...args} />;
