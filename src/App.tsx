@@ -10,21 +10,25 @@ import {
   Switch,
 } from 'react-router-dom';
 import { routes } from './core';
+import DateFnsUtils from '@date-io/date-fns';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 
 const App: FC = () => {
   return (
-  <MuiThemeProvider theme={muiTheme}>
-    <CssBaseline />
-    <Router>
-      <Switch>
-        <Route exact path={routes.index}>
-          <Home />
-        </Route>
-        <Redirect to={routes.index} />
-      </Switch>
-    </Router>
-  </MuiThemeProvider>
-  );
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <MuiThemeProvider theme={muiTheme}>
+        <CssBaseline />
+        <Router>
+          <Switch>
+            <Route exact path={routes.index}>
+              <Home />
+            </Route>
+            <Redirect to={routes.index} />
+          </Switch>
+        </Router>
+      </MuiThemeProvider>
+    </MuiPickersUtilsProvider>
+  )
 }
 
 export default App;
