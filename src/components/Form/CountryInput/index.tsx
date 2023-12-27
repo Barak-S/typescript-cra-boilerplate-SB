@@ -1,8 +1,7 @@
-import { Autocomplete } from '@material-ui/lab';
+import { Autocomplete, TextField } from '@mui/material';
 import React, { FC } from 'react';
 import { StyleProps } from 'styles';
-
-import { FormAutocompleteInputProps, useFormAutocompleteProps } from '../Autocomplete';
+import { FormAutocompleteInputProps } from '../Autocomplete';
 import { countries } from 'utils';
 
 interface Props extends StyleProps, FormAutocompleteInputProps {
@@ -12,7 +11,7 @@ interface Props extends StyleProps, FormAutocompleteInputProps {
 }
 
 export const FormCountryInput: FC<Props> = ({ label = 'country', value, required, error, helperText, onChange, ...props }) => {
-  const customizeAutocompleteProps = useFormAutocompleteProps({ required, label, error, helperText });
+  // const customizeAutocompleteProps = useFormAutocompleteProps({ required, label, error, helperText });
   return (
     <Autocomplete
       options={countries.map(itm => itm.name)}
@@ -21,8 +20,9 @@ export const FormCountryInput: FC<Props> = ({ label = 'country', value, required
       freeSolo
       fullWidth
       onInputChange={(_e, val) => onChange && onChange(val)}
+      renderInput={params => <TextField {...params} required={required} label={label} />}
       {...props}
-      {...customizeAutocompleteProps}
+      // {...customizeAutocompleteProps}
     />
   );
 };

@@ -1,11 +1,11 @@
 import {
-  makeStyles,
   Step as MaterialStep,
   StepLabel as MaterialStepLabel,
   Stepper as MaterialStepper,
   Theme,
   useTheme,
-} from '@material-ui/core';
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { FC } from 'react';
 import { colors, mc, StyleProps, useScreenSizes } from 'styles';
 

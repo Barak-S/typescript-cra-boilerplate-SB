@@ -1,13 +1,27 @@
-import AppBar from '@material-ui/core/AppBar';
-import { createMuiTheme, ThemeProvider, useTheme } from '@material-ui/core';
-import Tab from '@material-ui/core/Tab';
-import Tabs from '@material-ui/core/Tabs';
+import AppBar from '@mui/material/AppBar';
+import {
+  createTheme,
+  ThemeProvider,
+  Theme,
+  StyledEngineProvider,
+  useTheme,
+  adaptV4Theme,
+} from '@mui/material';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
 import { View } from 'components/Common';
 import React, { ChangeEvent, FC, ReactNode } from 'react';
 import { colors, StyleProps } from 'styles';
 
 import TabPanel from './components/TabPanel';
 import { useStyles } from './styles';
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 
 interface Props extends StyleProps {
   values: TabValue[];
@@ -39,21 +53,23 @@ export const FolderTabs: FC<Props> = ({ values, currentTab, onChange, style }) =
 
   return (
     <View style={style}>
-      <ThemeProvider theme={overrides}>
-        <AppBar className={classes.container} position="static">
-          <Tabs
-            classes={{ root: classes.root }}
-            TabIndicatorProps={{ style: { background: colors.white } }}
-            className={classes.tabs}
-            value={currentTab}
-            onChange={handleChange}
-          >
-            {values.map(el => (
-              <Tab key={el.id} className={classes.tab} label={el.name} {...getA11yProps(el.id)} />
-            ))}
-          </Tabs>
-        </AppBar>
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={overrides}>
+          <AppBar className={classes.container} position="static">
+            <Tabs
+              classes={{ root: classes.root }}
+              TabIndicatorProps={{ style: { background: colors.white } }}
+              className={classes.tabs}
+              value={currentTab}
+              onChange={handleChange}
+            >
+              {values.map(el => (
+                <Tab key={el.id} className={classes.tab} label={el.name} {...getA11yProps(el.id)} />
+              ))}
+            </Tabs>
+          </AppBar>
+        </ThemeProvider>
+      </StyledEngineProvider>
       <div className={classes.content}>
         {values.map(el => (
           <TabPanel key={el.id} value={currentTab || 0} index={el.id}>
@@ -65,7 +81,7 @@ export const FolderTabs: FC<Props> = ({ values, currentTab, onChange, style }) =
   );
 };
 
-const overrides = createMuiTheme({
+const overrides = createTheme(adaptV4Theme({
   overrides: {
     MuiTabs: {
       root: {
@@ -92,7 +108,7 @@ const overrides = createMuiTheme({
       },
     },
   },
-});
+}));
 
 export type FolderTabsProps = Props;
 export default FolderTabs;

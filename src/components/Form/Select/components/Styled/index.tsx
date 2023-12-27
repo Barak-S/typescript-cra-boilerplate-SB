@@ -1,5 +1,5 @@
-import { FormControl, IconButton, MenuItem, SelectProps, TextField, FormHelperText, ClickAwayListener } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { FormControl, IconButton, MenuItem, SelectProps, TextField, FormHelperText, ClickAwayListener } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { LineAwesomeIcon, LineAwesomeIconType } from 'components/Icons';
 import React, { FC, useMemo, useState } from 'react';
 import { colors, mc, mx, StyleProps, Styles } from 'styles';
@@ -68,7 +68,7 @@ export const FormSelectStyled: FC<Props> = ({
             inputProps: { style: styles.input },
             disableUnderline: true,
             endAdornment: (
-              <IconButton className={mc(localClasses.iconBtn, classes?.iconBtn)}>
+              <IconButton className={mc(localClasses.iconBtn, classes?.iconBtn)} size="large">
                 <LineAwesomeIcon type={iconType} size={24} className={mc(localClasses.icon, classes?.icon)} />
               </IconButton>
             ),

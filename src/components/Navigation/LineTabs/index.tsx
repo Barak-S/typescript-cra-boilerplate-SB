@@ -1,4 +1,5 @@
-import { makeStyles, Tab as MaterialTab, Tabs as MaterialTabs, Theme, useTheme } from '@material-ui/core';
+import { Tab as MaterialTab, Tabs as MaterialTabs, Theme, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { ChangeEvent, FC } from 'react';
 import { colors, mc, ms, mx, StyleProps } from 'styles';
 
@@ -69,7 +70,7 @@ const useStyles = (theme: Theme) =>
         color: colors.primary,
       },
       '& .MuiTabs-flexContainer': {
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
           alignItems: 'center',
           justifyContent: 'space-around',
           background: colors.paleGrey,

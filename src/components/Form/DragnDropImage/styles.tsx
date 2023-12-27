@@ -1,4 +1,5 @@
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { Theme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import { colors } from 'styles';
 
 export const useStyles = () =>
@@ -14,10 +15,10 @@ export const useStyles = () =>
       borderRadius: '12px',
       border: `solid 1px ${colors.lightPeriwinkle}`,
       backgroundColor: colors.paleGrey,
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('lg')]: {
         padding: '9% 10px',
       },
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         flexDirection: 'column',
       },
     },

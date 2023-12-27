@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import { SocialButton, SocialButtonNetworkType } from 'components/Buttons';
 import { View } from 'components/Common';
 import React, { FC } from 'react';
@@ -12,7 +12,7 @@ interface Props extends StyleProps {
 export const AuthSocialLoginButtons: FC<Props> = ({ style, onBtnClick }) => {
   return (
     <View style={[styles.container, style]} row alignItems="center" justifyContent="center">
-      <Grid container justify="center" spacing={3}>
+      <Grid container justifyContent="center" spacing={3}>
         <Grid item xs={12} sm={4}>
           <SocialButton style={styles.item} type="google" onClick={onBtnClick} />
         </Grid>

@@ -1,4 +1,5 @@
-import { Grid, makeStyles, Theme, useTheme } from '@material-ui/core';
+import { Grid, Theme, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { FC } from 'react';
 import { mc, StyleProps } from 'styles';
 

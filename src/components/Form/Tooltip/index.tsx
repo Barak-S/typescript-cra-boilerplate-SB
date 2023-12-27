@@ -1,4 +1,4 @@
-import { ClickAwayListener, Grid, Tooltip, TooltipProps } from '@material-ui/core';
+import { ClickAwayListener, Grid, Tooltip, TooltipProps } from '@mui/material';
 import { LineAwesomeIcon } from 'components/Icons';
 import React, { FC, useEffect, useState } from 'react';
 import { colors, mx, StyleProps, Styles, useHover } from 'styles';

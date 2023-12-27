@@ -1,4 +1,5 @@
-import { Checkbox, CheckboxProps, FormControlLabel, makeStyles } from '@material-ui/core';
+import { Checkbox, CheckboxProps, FormControlLabel } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { FC } from 'react';
 import { colors, Styles } from 'styles';
 import { getTestIdProps, TestIdProps } from 'utils';

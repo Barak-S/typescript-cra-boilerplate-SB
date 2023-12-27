@@ -1,4 +1,5 @@
-import { makeStyles, Paper, Theme, useTheme } from '@material-ui/core';
+import { Paper, Theme, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { FC } from 'react';
 import { StyleProps } from 'styles';
 

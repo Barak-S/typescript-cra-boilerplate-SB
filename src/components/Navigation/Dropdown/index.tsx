@@ -1,4 +1,5 @@
-import { Grid, makeStyles, Menu } from '@material-ui/core';
+import { Grid, Menu } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { LineAwesomeIcon, LineAwesomeIconType } from 'components/Icons';
 import React, { FC, MouseEvent, MutableRefObject, ReactNode, useEffect, useRef } from 'react';
 

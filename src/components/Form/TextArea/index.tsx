@@ -1,4 +1,5 @@
-import { FormHelperText, makeStyles, TextareaAutosize, TextareaAutosizeProps } from '@material-ui/core';
+import { FormHelperText, TextareaAutosize, TextareaAutosizeProps } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { Text, View } from 'components/Common';
 import React, { FC, useMemo, useState } from 'react';
 import { colors, mc, ms, mx, StyleProps, Styles } from 'styles';
@@ -141,7 +142,7 @@ const styles: Styles = {
     userSelect: 'none',
   },
   focusedLabel: {
-    transform: 'translate(0, -20px) scale(.75)',
+    transform: 'translate(0, -18px) scale(.75)',
     transformOrigin: 'top left',
     color: colors.primary,
   },

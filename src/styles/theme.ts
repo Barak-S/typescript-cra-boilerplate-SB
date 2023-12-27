@@ -1,11 +1,11 @@
-import { red } from '@material-ui/core/colors';
-import { createTheme } from '@material-ui/core/styles';
+import { red } from '@mui/material/colors';
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 import { colors } from './colors';
 import { mx } from './mixings';
 
 const mainFont = 'Rubik, sans-serif';
 
-export const muiTheme = createTheme({
+export const muiTheme = createTheme(adaptV4Theme({
   palette: {
     primary: {
       main: colors.primary,
@@ -61,14 +61,14 @@ export const muiTheme = createTheme({
       root: {
         height: 'fit-content',
         '&.Mui-focused > .MuiInputBase-input': {
-          background: colors.white,
-          border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
+          // background: colors.white,
+          // border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
         },
         '&.Mui-focused.Mui-error > .MuiInputBase-input': {
           color: colors.error,
         },
         '&.Mui-focused > .MuiInputAdornment-positionStart': {
-          borderColor: colors.withAlpha(colors.brownishGrey, 0.3),
+          // borderColor: colors.withAlpha(colors.brownishGrey, 0.3),
         },
       },
       input: {
@@ -93,6 +93,36 @@ export const muiTheme = createTheme({
         paddingRight: 50,
       },
     },
+    MuiOutlinedInput: {
+      root: {
+        borderRadius: 12,
+        padding: 0,
+        position: 'relative', // Make sure the container is relatively positioned
+        '&.Mui-focused:not(.Mui-error)': {
+          color: colors.primary,
+        },
+        '&.Mui-focused:not(.Mui-error) + .MuiInputBase-root > .MuiInputBase-input': {
+          border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
+        },
+        '& + .MuiInput-formControl': {
+          marginTop: 0,
+        },
+        // '& + .MuiInputAdornment': {
+        //   position: 'absolute',
+        //   top: 0, // Adjust top position as needed
+        //   right: 0, // Adjust right position as needed
+        // },
+      },
+      input: {
+        // backgroundColor: colors.white,
+        border: 'none',
+        width: '100%',
+        height: 52,
+      },
+      // inputAdornedEnd: {
+      //   position: 'absolute',
+      // }
+    },
     MuiInput: {
       underline: {
         '&:before, &:after': {
@@ -111,7 +141,6 @@ export const muiTheme = createTheme({
     },
     MuiInputLabel: {
       formControl: {
-        transform: 'translate(15px, 20px) scale(1)',
         textTransform: 'capitalize',
         zIndex: 1,
         fontSize: 16,
@@ -127,19 +156,12 @@ export const muiTheme = createTheme({
           marginTop: 0,
         },
       },
-      shrink: {
-        transform: 'translate(0, -18px) scale(.75)',
-      },
     },
     MuiFormLabel: {
       root: {
         pointerEvents: 'none',
-        '&.MuiInputLabel-formControl': {
-          transform: 'translate(15px, 18px) scale(1)',
-        },
-        '&.MuiInputLabel-shrink': {
-          transform: 'translate(0, -18px) scale(.75)',
-          transformOrigin: 'top left',
+        '&.MuiInputLabel-formControl:not(.Mui-focused):not([class*="-filled"])': {
+          transform: 'translate(15px, 30px) scale(1)',
         },
       },
       asterisk: {
@@ -241,4 +263,4 @@ export const muiTheme = createTheme({
       },
     },
   },
-});
+}));

@@ -1,4 +1,5 @@
-import { FormHelperText, Input, InputAdornment, InputProps, makeStyles } from '@material-ui/core';
+import { FormHelperText, Input, InputAdornment, InputProps } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { LineAwesomeIcon, LineAwesomeIconType } from 'components/Icons';
 import React, { FC } from 'react';
 import { colors, mc, ms, Styles } from 'styles';

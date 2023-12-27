@@ -1,7 +1,9 @@
 import React, { useState, FC, useEffect } from 'react';
 import { colors, StyleProps } from 'styles';
-import { CssBaseline, List, ListItemText, Hidden, Drawer } from '@material-ui/core';
-import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
+import { CssBaseline, List, ListItemText, Hidden, Drawer } from '@mui/material';
+import { useTheme, Theme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import createStyles from '@mui/styles/createStyles';
 import { NavLink } from 'react-router-dom';
 import { LineAwesomeIcon, LineAwesomeIconType } from 'components/Icons';
 
@@ -99,7 +101,7 @@ export const SidebarTabs: FC<Props> = ({ tabs, initialRoute, thumbnail, children
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden xsDown implementation="css">
+        <Hidden mdDown implementation="css">
           <Drawer
             classes={{
               paper: classes.drawerPaper,
@@ -134,7 +136,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     sidebarThumbnail: {
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         display: 'none',
       },
     },
@@ -146,7 +148,7 @@ const useStyles = makeStyles((theme: Theme) =>
       textDecoration: 'none',
       alignItems: 'center',
       paddingLeft: 21,
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         paddingLeft: 19,
       },
     },
@@ -157,11 +159,11 @@ const useStyles = makeStyles((theme: Theme) =>
       width: drawerWidth,
       zIndex: 1,
       top: 73,
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('lg')]: {
         top: 69,
         width: 206,
       },
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         top: 61,
         width: 65,
       },
@@ -172,13 +174,13 @@ const useStyles = makeStyles((theme: Theme) =>
       minHeight: 'calc(100vh - 73px)',
       display: 'flex',
       justifyContent: 'center',
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('lg')]: {
         width: `calc(100% - 206px)`,
       },
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         width: `calc(100% - 61px)`,
       },
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('md')]: {
         marginLeft: 0,
         width: '100%',
       },
@@ -190,14 +192,14 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       height: 64,
       paddingLeft: 24,
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         paddingLeft: 19,
       },
     },
     sidebarLinkLabel: {
       fontSize: 16,
       paddingLeft: 7,
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         display: 'none',
       },
     },

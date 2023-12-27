@@ -1,4 +1,4 @@
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress } from '@mui/material';
 import { Text, View } from 'components/Common';
 import { LineAwesomeIcon } from 'components/Icons';
 import React, { ChangeEvent, DragEvent, FC, useState } from 'react';

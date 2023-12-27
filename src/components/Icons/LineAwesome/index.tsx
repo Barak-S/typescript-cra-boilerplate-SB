@@ -1,4 +1,4 @@
-import { Icon } from '@material-ui/core';
+import { Icon } from '@mui/material';
 import React, { FC, Ref } from 'react';
 import { mc, ms, StyleProps } from 'styles';
 

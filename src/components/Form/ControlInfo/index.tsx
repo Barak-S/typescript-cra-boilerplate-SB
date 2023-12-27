@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import { Text, Title } from 'components/Common';
 import React, { FC } from 'react';
 import { colors, ms, StyleProps, Styles } from 'styles';

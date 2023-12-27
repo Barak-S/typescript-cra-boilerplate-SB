@@ -1,4 +1,4 @@
-import { Button } from '@material-ui/core';
+import { Button } from '@mui/material';
 import { Image } from 'components/Common';
 import React, { FC, MouseEvent, ReactNode } from 'react';
 import { colors, StyleProps } from 'styles';

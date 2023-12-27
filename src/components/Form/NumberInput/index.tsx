@@ -1,4 +1,4 @@
-import { IconButton, TextField } from '@material-ui/core';
+import { IconButton, TextField } from '@mui/material';
 import { View } from 'components/Common';
 import { LineAwesomeIcon } from 'components/Icons';
 import React, { ChangeEvent, FC } from 'react';
@@ -59,12 +59,12 @@ export const FormNumberInput: FC<Props> = ({ style, value, min, max, onChange })
         InputProps={{
           inputProps: { style: styles.input },
           startAdornment: (
-            <IconButton style={ms(styles.counterBtn)} onClick={handleClickMinus}>
+            <IconButton style={ms(styles.counterBtn)} onClick={handleClickMinus} size="large">
               <LineAwesomeIcon style={styles.icon} type="minus" />
             </IconButton>
           ),
           endAdornment: (
-            <IconButton style={ms(styles.counterBtn)} onClick={handleClickPlus}>
+            <IconButton style={ms(styles.counterBtn)} onClick={handleClickPlus} size="large">
               <LineAwesomeIcon style={styles.icon} type="plus" />
             </IconButton>
           ),

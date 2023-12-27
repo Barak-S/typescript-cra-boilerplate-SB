@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect, ChangeEvent } from 'react'
 import { Title } from 'components/Common'
-import Accordion from '@material-ui/core/Accordion'
-import AccordionDetails from '@material-ui/core/AccordionDetails'
-import AccordionSummary from '@material-ui/core/AccordionSummary'
+import Accordion from '@mui/material/Accordion'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import AccordionSummary from '@mui/material/AccordionSummary'
 import NavigationAccordionIcon from './components/Icon'
 import { colors, ms, StyleProps, Styles, useHover } from 'styles'
 

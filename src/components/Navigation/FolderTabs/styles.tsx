@@ -1,4 +1,5 @@
-import { makeStyles, Theme } from '@material-ui/core';
+import { Theme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { colors } from 'styles';
 
 export const useStyles = (theme: Theme) =>
@@ -39,7 +40,7 @@ export const useStyles = (theme: Theme) =>
         marginRight: 0,
         width: 'calc(20% - 2px)',
       },
-      [theme.breakpoints.down('md')]: {
+      [theme.breakpoints.down('lg')]: {
         fontSize: 17,
       },
     },

@@ -1,4 +1,4 @@
-import { InputAdornment } from '@material-ui/core';
+import { InputAdornment } from '@mui/material';
 import { Text, View } from 'components/Common';
 import ColorPicker from 'material-ui-color-picker';
 import React, { FC } from 'react';

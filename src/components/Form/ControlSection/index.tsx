@@ -1,4 +1,4 @@
-import { Divider, Grid } from '@material-ui/core';
+import { Divider, Grid } from '@mui/material';
 import React, { FC } from 'react';
 import { ms, StyleProps, Styles } from 'styles';
 import FormControlInfo from '../ControlInfo';

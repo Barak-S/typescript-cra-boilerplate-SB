@@ -1,9 +1,9 @@
-import { Autocomplete } from '@material-ui/lab';
+import { Autocomplete, TextField } from '@mui/material';
 import React, { ChangeEvent, FC } from 'react';
 import { ClassNameProps, StyleProps } from 'styles';
 import { timeZones } from 'utils';
 
-import { FormAutocompleteInputProps, useFormAutocompleteProps } from '../Autocomplete';
+import { FormAutocompleteInputProps } from '../Autocomplete';
 
 interface Props extends StyleProps, ClassNameProps, FormAutocompleteInputProps {
   value?: string;
@@ -13,7 +13,7 @@ interface Props extends StyleProps, ClassNameProps, FormAutocompleteInputProps {
 const codeToItem = (code: string) => timeZones.find(itm => itm.code === code);
 
 export const FormTimeZoneInput: FC<Props> = ({ style, value, required, label, error, helperText, onChange, ...props }) => {
-  const customizeAutocompleteProps = useFormAutocompleteProps({ required, label, error, helperText });
+  // const customizeAutocompleteProps = useFormAutocompleteProps({ required, label, error, helperText });
   const curValue = value ? codeToItem(value) : undefined;
 
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -33,7 +33,8 @@ export const FormTimeZoneInput: FC<Props> = ({ style, value, required, label, er
       disableClearable
       onChange={handleChange}
       {...props}
-      {...customizeAutocompleteProps}
+      renderInput={params => <TextField {...params} required={required} label={label} />}
+      // {...customizeAutocompleteProps}
     />
   );
 };

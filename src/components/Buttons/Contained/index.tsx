@@ -1,4 +1,5 @@
-import { Button, CircularProgress, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
+import { Button, CircularProgress, useMediaQuery, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { LineAwesomeIcon, LineAwesomeIconType } from 'components/Icons';
 import React, { FC } from 'react';
 import { colors, mc, ms, StyleProps, Styles, useHover } from 'styles';
@@ -52,7 +53,7 @@ export const ContainedButton: FC<Props> = ({
   const fontColor = disabled ? colors.tint2 : color === 'secondary' ? colors.textGray : colors.white;
   const theme = useTheme();
   const classes = useStyles(theme);
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
 
   const styles = getStyles(mainColor, hoverColor, fontColor, disabled, shadow, isMobile, processing);
   const { hover, hoverProps } = useHover();
@@ -66,7 +67,7 @@ export const ContainedButton: FC<Props> = ({
         className,
       )}
       variant="contained"
-      color={color !== 'red' ? color : undefined}
+      // color={color !== 'red' ? color : undefined}
       disabled={disabled}
       startIcon={startIcon && <LineAwesomeIcon type={startIcon} />}
       endIcon={endIcon && <LineAwesomeIcon type={endIcon} />}

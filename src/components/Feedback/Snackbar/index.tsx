@@ -1,5 +1,5 @@
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import React, { createContext, FC, useContext, useMemo, useState } from 'react';
 
 interface SnackbarContext {

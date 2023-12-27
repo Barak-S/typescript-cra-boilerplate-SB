@@ -1,6 +1,7 @@
 import React, { FC, ReactNode, Ref } from 'react';
-import TextField, { TextFieldProps } from '@material-ui/core/TextField';
-import { InputAdornment, makeStyles, CircularProgress } from '@material-ui/core';
+import TextField, { TextFieldProps } from '@mui/material/TextField';
+import { InputAdornment, CircularProgress } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { colors, Styles } from 'styles';
 import { mc, Style } from 'styles';
 import { getTestIdProps, TestIdProps } from 'utils';
@@ -61,6 +62,7 @@ export const FormTextInput: FC<Props> = ({
       fullWidth
       {...props}
       placeholder={placeholder}
+      variant="standard"
       InputProps={{
         inputProps: { style: inputStyle, maxLength, ...getTestIdProps(testID, 'input') },
         startAdornment: iconStart ? startIconProps : undefined,
@@ -90,13 +92,13 @@ const useStyles = ({ value, isStartIcon, valid, adornmentType, inputStyle }: Sty
         }),
       },
       '& > label': {
-        '&[class*="-shrink"]:not([class*="-focused"])': {
-          transform: isStartIcon && !value ? 'translate3D(65px, 20px, 0) scale(1)' : 'translate(0, -18px) scale(.75)',
-        },
+        // '&[class*="-shrink"]:not([class*="-focused"])': {
+        //   transform: isStartIcon && !value ? 'translate3D(65px, 20px, 0) scale(1)' : 'translate(0, -18px) scale(.75)',
+        // },
         ...(adornmentType === 'transparent' && {
-          '&[class*="-shrink"]:not([class*="-focused"])': {
-            transform: isStartIcon && !value ? 'translate3D(45px, 19px, 0) scale(1)' : 'translate(0, -18px) scale(.75)',
-          },
+          // '&[class*="-shrink"]:not([class*="-focused"])': {
+          //   transform: isStartIcon && !value ? 'translate3D(45px, 19px, 0) scale(1)' : 'translate(0, -18px) scale(.75)',
+          // },
         }),
         ...(isStartIcon && {
           '&[class*="-shrink"][class*="-filled"]': {

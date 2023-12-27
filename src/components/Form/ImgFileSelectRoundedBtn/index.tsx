@@ -1,5 +1,6 @@
-import { CircularProgress, makeStyles } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
+import { CircularProgress } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import IconButton from '@mui/material/IconButton';
 import { LineAwesomeIcon } from 'components/Icons';
 import React, { ChangeEvent, FC, useMemo } from 'react';
 import { ClassNameProps, colors, ms, StyleProps, Styles } from 'styles';
@@ -51,7 +52,7 @@ export const FormImgFileSelectRoundedBtn: FC<Props> = ({
             backgroundImage: src ? `url(${src})` : undefined,
             border: !src ? `dashed 2px ${colors.lightPeriwinkle}` : undefined,
           })}
-        >
+          size="large">
           {!src && !processing && <LineAwesomeIcon size={48} type="plus" color={colors.primary} />}
           {processing && <CircularProgress size={36} color="secondary" />}
         </IconButton>

@@ -1,15 +1,15 @@
-import { MuiThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
 import { muiTheme } from 'styles/theme';
-import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import React from 'react';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 export const decorators = [
   (Story) => (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <MuiThemeProvider theme={muiTheme}>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <ThemeProvider theme={muiTheme}>
         <Story />
-      </MuiThemeProvider>
-    </MuiPickersUtilsProvider>
+      </ThemeProvider>
+    </LocalizationProvider>
   ),
 ];

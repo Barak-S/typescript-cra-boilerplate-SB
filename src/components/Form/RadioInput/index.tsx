@@ -1,4 +1,4 @@
-import { FormControlLabel, FormControlLabelProps, Radio } from '@material-ui/core';
+import { FormControlLabel, FormControlLabelProps, Radio } from '@mui/material';
 import { LineAwesomeIcon } from 'components/Icons';
 import React, { FC } from 'react';
 import { colors, StyleProps, Styles } from 'styles';

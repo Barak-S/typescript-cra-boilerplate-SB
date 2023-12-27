@@ -1,8 +1,8 @@
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import MuiDialogActions from '@material-ui/core/DialogActions';
-import MuiDialogContent from '@material-ui/core/DialogContent';
-import { withStyles } from '@material-ui/core/styles';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import MuiDialogActions from '@mui/material/DialogActions';
+import MuiDialogContent from '@mui/material/DialogContent';
+import withStyles from '@mui/styles/withStyles';
 import React, { FC } from 'react';
 import { StyleProps } from 'styles';
 
@@ -43,7 +43,7 @@ export const AlertDialog: FC<Props> = ({ style, title, visible = false, actions,
       {!!actions && actions.length && (
         <DialogActions>
           {actions.map(({ title, autoFocus, color, onPress }) => (
-            <Button key={title} autoFocus={autoFocus} onClick={onPress} color={color}>
+            <Button key={title} autoFocus={autoFocus} onClick={onPress}>
               {title}
             </Button>
           ))}

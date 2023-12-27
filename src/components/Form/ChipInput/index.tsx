@@ -1,4 +1,4 @@
-import { Chip, Grid, IconButton } from '@material-ui/core';
+import { Chip, Grid, IconButton } from '@mui/material';
 import { View } from 'components/Common';
 import { LineAwesomeIcon } from 'components/Icons';
 import React, { FC, KeyboardEvent, useRef, useState, useEffect } from 'react';
@@ -104,7 +104,11 @@ export const FormChipInput: FC<Props> = ({ style, label, items = [], disabled, o
           </span>
         </div>
       </View>
-      <IconButton onClick={handleAdd(String(value))} disabled={!value || disabled} style={styles.addBtn}>
+      <IconButton
+        onClick={handleAdd(String(value))}
+        disabled={!value || disabled}
+        style={styles.addBtn}
+        size="large">
         <LineAwesomeIcon type="plus-circle" />
       </IconButton>
     </Grid>

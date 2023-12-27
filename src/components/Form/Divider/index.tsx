@@ -1,4 +1,4 @@
-import { Divider, DividerProps } from '@material-ui/core';
+import { Divider, DividerProps } from '@mui/material';
 import React, { FC } from 'react';
 
 type Props = DividerProps;

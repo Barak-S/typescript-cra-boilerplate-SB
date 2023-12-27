@@ -1,4 +1,5 @@
-import { StepConnector, withStyles } from '@material-ui/core';
+import { StepConnector } from '@mui/material';
+import withStyles from '@mui/styles/withStyles';
 import { colors } from 'styles';
 
 export const StepperConnector = withStyles({

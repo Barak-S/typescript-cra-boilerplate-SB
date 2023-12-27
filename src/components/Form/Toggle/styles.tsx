@@ -1,6 +1,8 @@
-import { makeStyles } from '@material-ui/core';
-import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
-import Switch from '@material-ui/core/Switch';
+import makeStyles from '@mui/styles/makeStyles';
+import { Theme } from '@mui/material/styles';
+import createStyles from '@mui/styles/createStyles';
+import withStyles from '@mui/styles/withStyles';
+import Switch from '@mui/material/Switch';
 import { colors } from 'styles';
 
 export const StyledToggle = withStyles((theme: Theme) =>
@@ -48,7 +50,7 @@ export const useStyles = () =>
     container: {
       height: '52px',
       alignItems: 'center',
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         flexDirection: 'row-reverse !important',
         justifyContent: 'space-between',
       },
@@ -71,7 +73,7 @@ export const useStyles = () =>
       font: 'normal normal normal 16px/23px Rubik',
       letterSpacing: '0px',
       color: colors.textGray,
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down('md')]: {
         marginLeft: '0px',
       },
     },

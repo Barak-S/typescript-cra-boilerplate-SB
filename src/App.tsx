@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Home from './pages/Home';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import { CssBaseline } from '@material-ui/core';
+import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
 import { muiTheme } from 'styles/theme';
 import {
   BrowserRouter as Router,
@@ -10,25 +10,34 @@ import {
   Switch,
 } from 'react-router-dom';
 import { routes } from './core';
-import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 
 const App: FC = () => {
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <MuiThemeProvider theme={muiTheme}>
-        <CssBaseline />
-        <Router>
-          <Switch>
-            <Route exact path={routes.index}>
-              <Home />
-            </Route>
-            <Redirect to={routes.index} />
-          </Switch>
-        </Router>
-      </MuiThemeProvider>
-    </MuiPickersUtilsProvider>
-  )
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={muiTheme}>
+          <CssBaseline />
+          <Router>
+            <Switch>
+              <Route exact path={routes.index}>
+                <Home />
+              </Route>
+              <Redirect to={routes.index} />
+            </Switch>
+          </Router>
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </LocalizationProvider>
+  );
 }
 
 export default App;

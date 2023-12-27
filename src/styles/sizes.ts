@@ -1,4 +1,4 @@
-import { useMediaQuery, useTheme } from '@material-ui/core';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 export const screens = {
   desktop: 992,
@@ -31,12 +31,12 @@ export const useScreenSizes = () => {
    * True, when the screen is mobile size
    * `@media (max-width:599.95px)`
    * */
-  const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   /**
    * True, when the screen is tablet size
    * `@media (min-width:600px) and (max-width:1279.95px)`
    * */
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const isTablet = useMediaQuery(theme.breakpoints.up('sm'));
   /**
    * True, when the screen is desktop size
    * `@media (min-width:1280px)`
