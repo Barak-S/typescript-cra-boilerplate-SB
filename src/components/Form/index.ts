@@ -19,7 +19,6 @@ export * from './Select';
 export * from './SelectFileBtn';
 export * from './StartEndDatesInput';
 export * from './TextArea';
-export * from './TextArea';
 export * from './TextInput';
 export * from './TimeZoneInput';
 export * from './Toggle';

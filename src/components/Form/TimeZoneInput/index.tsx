@@ -33,7 +33,7 @@ export const FormTimeZoneInput: FC<Props> = ({ style, value, required, label, er
       disableClearable
       onChange={handleChange}
       {...props}
-      renderInput={params => <TextField {...params} required={required} label={label} />}
+      renderInput={params => <TextField variant={"standard"} {...params} required={required} label={label} />}
       // {...customizeAutocompleteProps}
     />
   );

@@ -1,7 +1,6 @@
 import { red } from '@mui/material/colors';
 import { createTheme, adaptV4Theme } from '@mui/material/styles';
-import { colors } from './colors';
-import { mx } from './mixings';
+import { colors } from 'styles';
 
 const mainFont = 'Rubik, sans-serif';
 
@@ -17,7 +16,7 @@ export const muiTheme = createTheme(adaptV4Theme({
       main: red.A400,
     },
     background: {
-      default: colors.white,
+      default: colors.background,
     },
   },
   typography: {
@@ -44,12 +43,13 @@ export const muiTheme = createTheme(adaptV4Theme({
     },
     MuiButton: {
       root: {
-        fontSize: 15,
-        textTransform: 'uppercase',
+        fontSize: 14,
+        fontWeight: 600,
+        // textTransform: 'uppercase',
         fontFamily: mainFont,
       },
       contained: {
-        textTransform: 'uppercase',
+        // textTransform: 'uppercase',
         paddingLeft: 30,
         paddingRight: 30,
         paddingTop: 17,
@@ -59,69 +59,72 @@ export const muiTheme = createTheme(adaptV4Theme({
     },
     MuiInputBase: {
       root: {
-        height: 'fit-content',
+        borderRadius: 12,
+        borderTopLeftRadius: 12,
+        borderTopRightRadius: 12,
+        '&.Mui-focused:not(.Mui-error)': {
+          color: 'transparent !important',
+        },
+        // '&.Mui-focused > .MuiInputAdornment-positionStart': {
+        //   borderColor: `${colors.withAlpha(colors.brownishGrey, 0.3)}`,
+        // },
+        '& .MuiInputBase-input': {
+          backgroundColor: colors.paleGrey,
+          border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
+          borderRadius: 12,
+          height: 50,
+          paddingLeft: 16,
+          paddingRight: 16
+        },
         '&.Mui-focused > .MuiInputBase-input': {
-          // background: colors.white,
-          // border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
+          background: colors.white,
+          border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
         },
         '&.Mui-focused.Mui-error > .MuiInputBase-input': {
           color: colors.error,
         },
-        '&.Mui-focused > .MuiInputAdornment-positionStart': {
-          // borderColor: colors.withAlpha(colors.brownishGrey, 0.3),
+        '& .MuiInputLabel-root': {
+          transform: 'translate(15px, 30px) scale(1)',
+        },
+        '& > label': {
+          '&[class*="-shrink"]:not([class*="-focused"])': {
+            transform: 'translate(0, -6px) scale(.75)',
+          },
+          '&[class*="-shrink"][class*="-focused"]': {
+            transform: 'translate(0, -6px) scale(.75)',
+          },
+          '&[class*="-shrink"][class*="-filled"]': {
+            transform: 'translate(0, -6px) scale(.75)',
+          },
+          '& .MuiFormLabel-asterisk': {
+            color: colors.error,
+            transform: 'translateX(-3px)',
+            display: 'inline-flex',
+          },
         },
       },
       input: {
         border: `1px solid transparent`,
         boxSizing: 'border-box',
-        fontSize: 21,
+        fontSize: 16,
         borderRadius: 12,
-        height: 52,
+        height: 50,
         display: 'flex',
         alignItems: 'center',
-        color: colors.blackTwo,
+        color: colors.black,
         fontFamily: mainFont,
-        background: colors.paleGrey,
+        backgroundColor: colors.paleGrey,
+        // background: colors.white,
         paddingLeft: 15,
         boxShadow: 'none',
         WebkitAppearance: 'none',
       },
-      inputAdornedStart: {
-        paddingLeft: 74,
-      },
-      inputAdornedEnd: {
-        paddingRight: 50,
-      },
-    },
-    MuiOutlinedInput: {
-      root: {
-        borderRadius: 12,
-        padding: 0,
-        position: 'relative', // Make sure the container is relatively positioned
-        '&.Mui-focused:not(.Mui-error)': {
-          color: colors.primary,
-        },
-        '&.Mui-focused:not(.Mui-error) + .MuiInputBase-root > .MuiInputBase-input': {
-          border: `1px solid ${colors.withAlpha(colors.brownishGrey, 0.3)}`,
-        },
-        '& + .MuiInput-formControl': {
-          marginTop: 0,
-        },
-        // '& + .MuiInputAdornment': {
-        //   position: 'absolute',
-        //   top: 0, // Adjust top position as needed
-        //   right: 0, // Adjust right position as needed
-        // },
-      },
-      input: {
-        // backgroundColor: colors.white,
-        border: 'none',
-        width: '100%',
-        height: 52,
-      },
+      // inputAdornedStart: {
+      //   paddingLeft: 74,
+      // },
       // inputAdornedEnd: {
-      //   position: 'absolute',
-      // }
+      //   paddingRight: 50,
+      // },
     },
     MuiInput: {
       underline: {
@@ -129,19 +132,10 @@ export const muiTheme = createTheme(adaptV4Theme({
           content: 'none',
         },
       },
-      input: {
-        '&[type="date"]::-webkit-calendar-picker-indicator': {
-          opacity: 0,
-          position: 'absolute',
-          left: -27,
-          ...mx.zIndex.base,
-          ...mx.square(54),
-        },
-      },
     },
     MuiInputLabel: {
       formControl: {
-        textTransform: 'capitalize',
+        transform: 'translate(15px, 30px) scale(1)',
         zIndex: 1,
         fontSize: 16,
       },
@@ -156,13 +150,13 @@ export const muiTheme = createTheme(adaptV4Theme({
           marginTop: 0,
         },
       },
+      shrink: {
+        transform: 'translate(0, -6px) scale(.75)',
+      },
     },
     MuiFormLabel: {
       root: {
         pointerEvents: 'none',
-        '&.MuiInputLabel-formControl:not(.Mui-focused):not([class*="-filled"])': {
-          transform: 'translate(15px, 30px) scale(1)',
-        },
       },
       asterisk: {
         color: colors.rustyRed,
@@ -194,7 +188,7 @@ export const muiTheme = createTheme(adaptV4Theme({
         top: 0,
         left: 0,
         width: 54,
-        height: 52,
+        height: 50,
         maxHeight: 'initial',
         background: colors.veryLightPinkThree,
         justifyContent: 'center',
@@ -219,21 +213,27 @@ export const muiTheme = createTheme(adaptV4Theme({
     },
     MuiTabs: {
       root: {
-        height: '100%',
+        height: 36,
+        minHeight: 36,
         overflow: 'visible',
       },
       flexContainer: {
-        height: '100%',
+        height: 36,
+        alignItems: 'center',
       },
       scroller: {
-        overflow: 'visible!important',
+        height: 36,
       },
     },
     MuiTab: {
+      fullWidth: {
+        height: 36,
+        padding: 0,
+      },
       root: {
-        textTransform: 'inherit',
+        height: 36,
+        minHeight: 36,
         fontSize: 'inherit',
-        maxWidth: 'initial',
       },
     },
     MuiStepIcon: {

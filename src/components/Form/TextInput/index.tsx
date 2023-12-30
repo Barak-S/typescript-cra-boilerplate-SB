@@ -2,11 +2,9 @@ import React, { FC, ReactNode, Ref } from 'react';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
 import { InputAdornment, CircularProgress } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import { colors, Styles } from 'styles';
-import { mc, Style } from 'styles';
-import { getTestIdProps, TestIdProps } from 'utils';
+import { colors, Styles, Style, mc } from 'styles';
 
-type Props = TextFieldProps & CustomProps & TestIdProps;
+type Props = TextFieldProps & CustomProps;
 
 interface CustomProps {
   inputStyle?: Style;
@@ -33,7 +31,6 @@ export const FormTextInput: FC<Props> = ({
   forwardRef,
   className,
   placeholder,
-  testID,
   ...props
 }) => {
   const startIconProps = <InputAdornment position="start">{iconStart}</InputAdornment>;
@@ -60,11 +57,11 @@ export const FormTextInput: FC<Props> = ({
       ref={forwardRef}
       className={mc(classes.root, className)}
       fullWidth
+      variant="standard"
       {...props}
       placeholder={placeholder}
-      variant="standard"
       InputProps={{
-        inputProps: { style: inputStyle, maxLength, ...getTestIdProps(testID, 'input') },
+        inputProps: { style: inputStyle, maxLength },
         startAdornment: iconStart ? startIconProps : undefined,
         endAdornment: getEndAdornment(),
         ...(InputProps ? InputProps : {}),
@@ -82,7 +79,7 @@ interface StylesConfig {
 }
 
 const useStyles = ({ value, isStartIcon, valid, adornmentType, inputStyle }: StylesConfig) =>
-  makeStyles(() => ({
+  makeStyles((theme) => ({
     root: {
       '& .MuiInputAdornment-root': {
         position: 'absolute',
@@ -91,18 +88,27 @@ const useStyles = ({ value, isStartIcon, valid, adornmentType, inputStyle }: Sty
           border: 'none',
         }),
       },
+      ...(isStartIcon && {
+        '& .MuiInputBase-root.MuiInput-root .MuiInputBase-input': {
+          paddingLeft: 64
+        },
+      }),
+      '& .MuiInputLabel-root': {
+        transform: 'translate(15px, 30px) scale(1)',
+      },
       '& > label': {
-        // '&[class*="-shrink"]:not([class*="-focused"])': {
-        //   transform: isStartIcon && !value ? 'translate3D(65px, 20px, 0) scale(1)' : 'translate(0, -18px) scale(.75)',
-        // },
-        ...(adornmentType === 'transparent' && {
-          // '&[class*="-shrink"]:not([class*="-focused"])': {
-          //   transform: isStartIcon && !value ? 'translate3D(45px, 19px, 0) scale(1)' : 'translate(0, -18px) scale(.75)',
-          // },
-        }),
+        '&[class*="-shrink"]:not([class*="-focused"])': {
+          transform: isStartIcon && !value ? 'translate3D(65px, 20px, 0) scale(.75)' : 'translate(0, -6px) scale(.75)',
+        },
+        '&[class*="-shrink"][class*="-focused"]': {
+          transform: isStartIcon ? 'translate(0px, -6px) scale(.75)' : 'translate(0, -6px) scale(.75)',
+        },
+        '&[class*="-shrink"][class*="-filled"]': {
+          transform: isStartIcon ? 'translate(0px, -6px) scale(.75)' : 'translate(0, -6px) scale(.75)',
+        },
         ...(isStartIcon && {
-          '&[class*="-shrink"][class*="-filled"]': {
-            transform: 'translate(0, -18px) scale(.75)',
+          '&[class*="-shrink"]:not([class*="-focused"]):not([class*="-filled"])': {
+            transform: 'translate(64px, 30px) scale(1)',
           },
         }),
         ...(!!valid && {
@@ -131,4 +137,3 @@ const useStyles = ({ value, isStartIcon, valid, adornmentType, inputStyle }: Sty
 
 export const useFormTextInputStyles = useStyles;
 export type FormTextInputProps = Props;
-export default FormTextInput;

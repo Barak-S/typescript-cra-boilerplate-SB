@@ -137,7 +137,7 @@ const getStyles = (focused: boolean, inputWidth: number): Styles => ({
     flexShrink: 0,
     padding: '5px 52px 5px 15px',
     borderRadius: 12,
-    minHeight: 52,
+    minHeight: 50,
     width: '100%',
   },
   itemContainer: {

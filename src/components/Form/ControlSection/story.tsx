@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormControlSection, { FormControlSectionProps as Props } from '.';
-import FormTextInput from '../TextInput';
+import { FormTextInput } from '../TextInput';
 
 export default {
   title: 'components/Form/ControlSection',

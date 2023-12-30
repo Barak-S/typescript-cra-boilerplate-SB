@@ -129,7 +129,7 @@ const useStyles = makeStyles({
   containerSmall: {
     height: 32,
     fontSize: 11,
-    fontWeight: 400,
+    fontWeight: 500,
     '& .MuiButton-label': {
       display: 'flex',
       alignItems: 'center',

@@ -122,10 +122,11 @@ const styles: Styles = {
     background: colors.paleGrey,
     padding: 15,
     borderRadius: 12,
+    ...mx.border(1, 'solid', '#cecece'),
   },
   focusedArea: {
     background: colors.white,
-    ...mx.border(1, 'solid', '#cecece'),
+    // ...mx.border(1, 'solid', '#cecece'),
     boxSizing: 'border-box',
   },
   label: {
@@ -142,7 +143,7 @@ const styles: Styles = {
     userSelect: 'none',
   },
   focusedLabel: {
-    transform: 'translate(0, -18px) scale(.75)',
+    transform: 'translate(0, -20px) scale(.75)',
     transformOrigin: 'top left',
     color: colors.primary,
   },
@@ -152,4 +153,4 @@ const styles: Styles = {
 };
 
 export type FormTextAreaProps = Props;
-export default FormTextArea;
+// export default FormTextArea;

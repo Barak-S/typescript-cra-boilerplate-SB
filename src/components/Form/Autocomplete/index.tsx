@@ -12,22 +12,18 @@ interface Props {
   options: AutocompleteOption[]
 }
 
-export const FormAutocomplete: FC<Props> = ({ required, label, ...props }) => {
+export const FormAutocomplete: FC<Props> = ({ options, required, label, ...props }) => {
   const classes = useStyles();
   return (
-    // <Autocomplete
-    //   {...props}
-    //   className={classes.container}
-    //   classes={{
-    //     endAdornment: classes.endAdornment,
-    //   }}
-    //   renderInput={params => <TextField {...params} required={required} label={label} />}
-    // />
     <Autocomplete
-      {...props}
+      className={classes.container}
+      classes={{
+        endAdornment: classes.endAdornment,
+      }}
+      options={options}
       disablePortal
-      sx={{ width: 300 }}
-      renderInput={params => <TextField {...params} required={required} label={label} />}
+      renderInput={params => <TextField variant={"standard"} {...params} required={required} label={label} />}
+      {...props}
     />
   );
 };

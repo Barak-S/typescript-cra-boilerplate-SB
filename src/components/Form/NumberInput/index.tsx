@@ -80,7 +80,7 @@ const getStyles = (disabled: boolean): Styles => ({
   container: {
     width: '100%',
     maxWidth: 145,
-    height: 52,
+    height: 50,
     borderRadius: 12,
     overflow: 'hidden',
     color: disabled ? colors.greyish : colors.brownishGrey,

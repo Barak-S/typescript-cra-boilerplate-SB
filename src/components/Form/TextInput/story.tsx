@@ -2,7 +2,7 @@ import { View } from 'components/Common';
 import { LineAwesomeIcon } from 'components/Icons';
 import React, { FC, useState } from 'react';
 
-import FormTextInput, { FormTextInputProps as Props } from '.';
+import { FormTextInput, FormTextInputProps as Props } from '.';
 
 export default {
   title: 'components/Form/TextInput',

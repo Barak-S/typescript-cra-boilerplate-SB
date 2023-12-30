@@ -1,6 +1,5 @@
-import { LineAwesomeIconType } from 'components/Icons';
 import { isString } from 'lodash';
-import React, { PureComponent } from 'react';
+import React, { PureComponent, ReactNode } from 'react';
 import { ClassNameProps, StyleProps } from 'styles';
 import FormSelectStyled, { FormSelectStyledProps } from './components/Styled';
 
@@ -21,7 +20,7 @@ interface CommonProps extends StyleProps, ClassNameProps {
 interface Props<T> extends CommonProps {
   options: T[];
   value?: T;
-  iconExtractor?: (v: T) => LineAwesomeIconType | undefined;
+  iconExtractor?: (v: T) => ReactNode | undefined;
   keyExtractor: (v: T) => string;
   titleExtractor: (v: T) => string;
   onChange?: (v: T) => void;

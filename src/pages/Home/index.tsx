@@ -4,22 +4,51 @@ import { StyleProps } from 'styles';
 import { Typography } from '@mui/material';
 import { ContainedButton } from 'components/Buttons/Contained';
 import { FormTextInput, FormPasswordInput, FormTextArea, FormDateInput } from 'components/Form';
+import { LineAwesomeIcon } from 'components/Icons';
 
 type Props = StyleProps;
 
 const Home: FC<Props> = ({ style }) => {
-
     const classes = useStyles()
+    const required = true
+    const errors = {
+        text: 'error text field',
+        password: 'error password field',
+        textArea: 'error textArea field',
+    }
+    const helperText = 'this is helper text'
     return (
         <div className={classes.container} style={style}>
-          <Typography>Home</Typography>
-          <FormTextInput label="FormTextInput"/>
-          <FormPasswordInput label="FormPasswordInput" fullWidth={false} visible={false} />
-          <FormTextArea label="FormTextArea"/>
-          <FormDateInput label="FormDateInput" />
-          <ContainedButton startIcon="plus-circle" size="small">Contained Button</ContainedButton>
-          <ContainedButton startIcon="plus-circle" size="medium">Contained Button</ContainedButton>
-          <ContainedButton startIcon="plus-circle" size="large">Contained Button</ContainedButton>
+            <Typography>HOME</Typography>
+            <FormTextInput
+                required={required}
+                label="Form Text Input"
+                // helperText={errors.text}
+                // error={!!errors.text}
+            />
+            <FormPasswordInput
+                required={required}
+                label="Form Password Input" fullWidth={false} visible={false}
+                iconStart={<LineAwesomeIcon type="lock" />}
+                // helperText={errors.password}
+                // error={!!errors.password}
+            />
+            <FormTextArea
+                required={required}
+                label="Form Text Area"
+                // helperText={errors.textArea}
+                // error={!!errors.textArea}
+            />
+            <FormDateInput
+                required={required}
+                label="FormDateInput"
+                // TODO: add error and helper text
+                // helperText={errors.textArea}
+                // error={!!errors.textArea}
+            />
+            <ContainedButton startIcon="plus-circle" size="small">Contained Button</ContainedButton>
+            <ContainedButton startIcon="plus-circle" size="medium">Contained Button</ContainedButton>
+            <ContainedButton startIcon="plus-circle" size="large">Contained Button</ContainedButton>
         </div>
     );
 };

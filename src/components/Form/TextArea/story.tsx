@@ -1,7 +1,7 @@
 import { View } from 'components/Common';
 import React, { useState } from 'react';
 
-import FormTextArea, { FormTextAreaProps as Props } from '.';
+import { FormTextArea, FormTextAreaProps as Props } from '.';
 
 export default {
   title: 'components/Form/TextArea',

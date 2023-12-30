@@ -62,7 +62,7 @@ const getStyles = (color: string): Styles => ({
   },
   pickerAdornmentField: {
     width: 52,
-    height: 52,
+    height: 50,
     background: color,
     borderTopLeftRadius: 12,
     borderBottomLeftRadius: 12,

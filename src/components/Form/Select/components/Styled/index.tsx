@@ -1,9 +1,10 @@
 import { FormControl, IconButton, MenuItem, SelectProps, TextField, FormHelperText, ClickAwayListener } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import { LineAwesomeIcon, LineAwesomeIconType } from 'components/Icons';
-import React, { FC, useMemo, useState } from 'react';
-import { colors, mc, mx, StyleProps, Styles } from 'styles';
+import React, { FC, useMemo, useState, ReactNode } from 'react';
+import { colors, StyleProps, Styles, mc, } from 'styles';
 import { genId } from 'utils';
+import { LineAwesomeIcon } from 'components/Icons';
+import { FormTextInput } from 'components/Form/TextInput';
 
 type Props = StyleProps & CustomProps;
 
@@ -21,7 +22,7 @@ interface CustomProps extends SelectProps {
     icon?: string;
     iconBtn?: string;
   };
-  iconStart?: LineAwesomeIconType;
+  iconStart?: ReactNode;
   required?: boolean;
   onChange?: (value: any) => void;
 }
@@ -43,6 +44,7 @@ export const FormSelectStyled: FC<Props> = ({
   classes,
   iconStart,
   onChange,
+  placeholder,
   ...props
 }) => {
   const [open, setOpen] = useState<boolean>(false);
@@ -53,27 +55,19 @@ export const FormSelectStyled: FC<Props> = ({
   return (
     <ClickAwayListener onClickAway={() => setOpen(false)}>
       <FormControl className={mc(localClasses.container, className)} style={style} onClick={() => !disabled && setOpen(!open)}>
-        <TextField
+        <FormTextInput
           id={selectId}
+          variant="standard"
           className={localClasses.select}
           label={label}
           required={required}
           disabled={disabled}
           error={error}
           autoComplete="off"
-          // eslint-disable-next-line
+          placeholder={placeholder}
           value={curOpt && curOpt.name ? curOpt.name : ''}
-          InputProps={{
-            readOnly: Boolean(true),
-            inputProps: { style: styles.input },
-            disableUnderline: true,
-            endAdornment: (
-              <IconButton className={mc(localClasses.iconBtn, classes?.iconBtn)} size="large">
-                <LineAwesomeIcon type={iconType} size={24} className={mc(localClasses.icon, classes?.icon)} />
-              </IconButton>
-            ),
-            startAdornment: iconStart && <LineAwesomeIcon type={iconStart} size={32} className={localClasses.startIcon} />,
-          }}
+          iconStart={iconStart}
+          iconEnd={<LineAwesomeIcon type={iconType} size={24} className={mc(localClasses.icon, classes?.icon)} />}
         />
         {helperText && <FormHelperText error={error}>{helperText}</FormHelperText>}
         {open && (
@@ -119,49 +113,25 @@ export const useStyles = (iconStart: boolean) =>
     },
     select: {
       flex: '1 0 auto',
-      height: 52,
+      height: 50,
       width: '100%',
       marginBottom: 'auto',
+      '& .MuiInputBase-input': {
+        backgroundColor: colors.white,
+      },
     },
     icon: {
-      position: 'absolute',
-      top: '50%',
-      right: 14,
-      transform: 'translateY(-50%)',
       pointerEvents: 'none',
-    },
-    iconBtn: {
-      position: 'absolute',
-      cursor: 'pointer',
-      top: 0,
-      right: 0,
-      background: 'none',
-      borderRadius: '0',  // Explicitly specifying the type
-      borderTopRightRadius: 12,
-      borderBottomRightRadius: 12,
-      pointerEvents: 'none',
-    },
-    startIcon: {
-      paddingLeft: 0,
-      position: 'absolute',
-      top: '50%',
-      zIndex: 1,
-      transform: 'translate(13px, -50%)',
-      pointerEvents: 'none',
-      color: colors.brownishGrey,
-    },
-    error: {
-      color: colors.error,
     },
     selectedItem: {
       color: colors.white,
-      backgroundColor: colors.primary,
+      backgroundColor: colors.green,
     },
     selectMenu: {
       padding: '8px 0',
       borderRadius: 4,
       position: 'absolute',
-      top: 53,
+      top: 66,
       zIndex: 1500,
       backgroundColor: colors.white,
       width: '100%',

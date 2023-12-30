@@ -1,5 +1,5 @@
 import { Icon, IconButton } from '@mui/material';
-import FormTextInput, { FormTextInputProps } from '../TextInput';
+import { FormTextInput, FormTextInputProps } from '../TextInput';
 import React, { FC, MouseEvent } from 'react';
 
 interface CustomProps {
