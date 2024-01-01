@@ -82,7 +82,7 @@ export const FormChipInput: FC<Props> = ({ style, label, items = [], disabled, o
   const styles = getStyles(focused, inputWidth);
 
   return (
-    <Grid component="label" style={ms(styles.container, style)} onFocus={() => setFocused(true)} onBlur={handleBlur}>
+    <div style={ms(styles.container, style)} onFocus={() => setFocused(true)} onBlur={handleBlur}>
       <View style={styles.label}>{label}</View>
       <View style={styles.list} row>
         {items.map(data => (
@@ -111,7 +111,7 @@ export const FormChipInput: FC<Props> = ({ style, label, items = [], disabled, o
         size="large">
         <LineAwesomeIcon type="plus-circle" />
       </IconButton>
-    </Grid>
+    </div>
   );
 };
 
@@ -119,6 +119,7 @@ const getStyles = (focused: boolean, inputWidth: number): Styles => ({
   container: {
     display: 'block',
     position: 'relative',
+    marginTop: 16,
   },
   addBtn: {
     position: 'absolute',
@@ -167,7 +168,7 @@ const getStyles = (focused: boolean, inputWidth: number): Styles => ({
     left: 0,
     ...mx.zIndex.overBase,
     color: focused ? colors.primary : colors.withAlpha(colors.black, 0.54),
-    transform: focused ? 'translate(-7px, -20px) scale(0.75)' : 'translate(15px, 17px)',
+    transform: focused ? 'translate(-10px, -24px) scale(0.75)' : 'translate(15px, 17px)',
     transition: 'color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms',
   },
 });

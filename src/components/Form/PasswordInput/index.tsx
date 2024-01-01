@@ -10,7 +10,7 @@ interface CustomProps {
 
 type Props = FormTextInputProps & CustomProps;
 
-export const FormPasswordInput: FC<Props> = ({ visible = false, onChangeVisibleClick, ...props }) => {
+export const FormPasswordInput: FC<Props> = ({ visible, onChangeVisibleClick, ...props }) => {
   const { value, disabled: isInputDisabled } = props;
 
   const handleClickShowPassword = (): void => {

@@ -66,7 +66,8 @@ export const muiTheme = createTheme(adaptV4Theme({
           color: 'transparent !important',
         },
         // '&.Mui-focused > .MuiInputAdornment-positionStart': {
-        //   borderColor: `${colors.withAlpha(colors.brownishGrey, 0.3)}`,
+          // borderColor: `${colors.withAlpha(colors.brownishGrey, 0.3)}`,
+          // borderColor: colors.error,
         // },
         '& .MuiInputBase-input': {
           backgroundColor: colors.paleGrey,
@@ -82,6 +83,10 @@ export const muiTheme = createTheme(adaptV4Theme({
         },
         '&.Mui-focused.Mui-error > .MuiInputBase-input': {
           color: colors.error,
+        },
+        '&.Mui-error > .MuiInputBase-input': {
+          color: colors.error,
+          border: `1px solid ${colors.error}`,
         },
         '& .MuiInputLabel-root': {
           transform: 'translate(15px, 30px) scale(1)',
@@ -157,6 +162,9 @@ export const muiTheme = createTheme(adaptV4Theme({
     MuiFormLabel: {
       root: {
         pointerEvents: 'none',
+        '&.Mui-error + .MuiInputBase-root > .MuiInputAdornment-positionStart': {
+          borderColor: colors.error,
+        },
       },
       asterisk: {
         color: colors.rustyRed,
@@ -176,9 +184,6 @@ export const muiTheme = createTheme(adaptV4Theme({
           background: colors.white,
           color: colors.error,
           borderColor: 'currentColor',
-        },
-        '&.Mui-error + .MuiInputBase-root > .MuiInputAdornment-positionStart': {
-          borderColor: colors.error,
         },
       },
     },

@@ -52,13 +52,8 @@ export const FormDateInput: FC<Props> = ({
       }
     }
   };
-
   const classes = useStyles(valid);
   const styles = getStyles();
-  /**
-   * KeyboardDatePicker API:
-   * https://material-ui-pickers.dev/api/KeyboardDatePicker
-   */
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div style={ms(styles.container, style)}>
@@ -74,9 +69,6 @@ export const FormDateInput: FC<Props> = ({
           slotProps={{ textField: { variant: "standard" } }}
           onChange={handleDatePickerChange}
         />
-        {/* <div style={styles.fakeBtn}>
-          <LineAwesomeIcon type="calendar" color={colors.brownishGrey} />
-        </div> */}
       </div>
     </LocalizationProvider>
   );
@@ -95,6 +87,7 @@ export const useStyles = (valid: boolean) =>
   makeStyles(() => ({
     input: {
       width: '100%',
+      height: 66,
       '& .MuiInputAdornment-root': {
         position: 'absolute',
       },
